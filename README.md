@@ -14,7 +14,7 @@ A mathematical game
         3. [Hotel Owner](#hotel-owner)
 3. [Scope](#scope)
     1. [Design](#design)
-    2. [Colour Scheme](colour-scheme)
+    2. [Colour Scheme](#colour-scheme)
     3. [Typography](#typeography)
     4. [Images](#images)
 4. [Wireframes](#wireframes)
