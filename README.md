@@ -45,10 +45,28 @@ A mathematical game
 
 #### First Time Visitors
 
+##### Parents
+As a parent:
+- I want a game that is easy to play and understand.
+- I want a game that I can customise to my child's level of ability.
+- I want my children to play a game that is educational.
+- I want my children to be able to play a game that is safe.
+- I want my children to be engaged and have fun.
+- I wany my children to feel a sense of achievement.
+
+##### Adults
+- I want to improve my mental artihmatic skills.
+- I want to be able to play the game quickly.
+- I want to feel like I am playing something serious and not silly.
+- I want the game to be available across all my devices.
+- I want to be able to save my progress.
+
 
 [Back to Index](#table-of-contents)
 
 #### Returning Visitors
+- I want to see my previous scores.
+- I want to be able to change settings to make the game more challenging.
 
 
 [Back to Index](#table-of-contents)
