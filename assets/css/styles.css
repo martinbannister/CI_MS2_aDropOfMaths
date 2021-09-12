@@ -1,0 +1,18 @@
+    /* REFERENCE: Using CSS custom properties to
+    create changable theme
+    https://www.sitepoint.com/css-theming-custom-properties-javascript/ */
+:root {
+    /* Children's theme */
+    --problem_bg_colour: hsl(209, 100%, 50%);
+    --footer_bg_colour: hsl(60, 100%, 50%);
+}
+
+:root[theme='adult'] {
+    /* Grown Up theme */
+    --problem_bg_colour: hsl(209, 40%, 46%);
+    --footer_bg_colour: hsl(209, 30%, 53%);
+    --bubble_colour:hsl(209, 100%, 53%);
+    --bubble_text_colour:hsl(360,100%,100%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&family=Short+Stack&display=swap');
