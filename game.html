@@ -19,7 +19,27 @@
         <!-- Modal introduction dialog -->
         <div class="overlay">
             <div id="settings">
-
+                <form>
+                    <div>
+                        <p>Are you...?</p>
+                        <input type="checkbox" id="chk_adult">
+                        <label for="chk_adult">an Adult</label>
+                        <input type="chckbox" id="chk_child">
+                        <label for="chk_child">a Child</label>
+                    </div>
+                    <div>
+                        <!-- REFERENCE: reason for not using input type="number" -->
+                        <!-- https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/ -->
+                        <label for="max_num">Maximum number to be asked to calculate</label>
+                        <input type="text" id="max_num" pattern="[0-9]*" inputmode="numeric" value="10">
+                        <label for=max_speed">Speed that bubbles will drop (seconds)</label>
+                        <input type="text" id="max_speed" pattern="[0-9]*" inputmode="numeric" value="6">
+                        <label for="q_time">Time allowed for each question (seconds)</label>
+                        <input type="text" id="q_time" pattern="[0-9]*" inputmode="numeric" value="10">
+                        <label for="max_qs">Number of questions per game</label>
+                        <input type="text" id="max_qs" pattern="[0-9]*" inputmode="numeric" value="10">
+                    </div>
+                </form>
             </div>
         </div>
     </section>
