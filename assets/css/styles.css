@@ -25,3 +25,12 @@
     top: 0;
     left: 0;
 }
+
+#settings {
+    margin-top: auto;
+    margin-left: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 60vh;
+    width: 30vw;
+}
