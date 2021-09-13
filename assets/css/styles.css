@@ -61,8 +61,8 @@
 #calc_type_group {
     display: flex;
     justify-content: space-around;
-    /* view width used as unit for responsiveness */
-    width: 50vw;
+    /* % used as unit for proportion of parent container */
+    width: 95%;
 }
 
 /* styles the spans contained within labels
