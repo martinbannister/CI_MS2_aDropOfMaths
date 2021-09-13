@@ -70,13 +70,13 @@
     horizontally and vertically */
 .custom_radio {
     display:flex;
-    height: 10vw;
-    width: 10vw;
+    height: 4vw;
+    width: 4vw;
     border-radius: 50%;
     background-color: hsl(209, 50%, 50%);
     justify-content: center;
     align-items: center;
-    font-size: 8vw;
+    font-size: 3vw;
     font-weight: 700;
 }
 
