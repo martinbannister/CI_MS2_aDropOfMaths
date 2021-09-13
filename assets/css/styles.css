@@ -48,7 +48,7 @@
 
 /* Hide the browser's default radio button */
 /* copied from w3schools how to referenced above */
-.calc_type_label input {
+.calc_type_label > input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -63,16 +63,36 @@
     width: 50vw;
 }
 
+/* styles the spans contained within labels
+    to create circles with text centered
+    horizontally and vertically */
 .custom_radio {
     display:flex;
     height: 10vw;
     width: 10vw;
-    background-color: hsl(209, 50%, 50%);
     border-radius: 50%;
+    background-color: hsl(209, 50%, 50%);
     justify-content: center;
     align-items: center;
     font-size: 8vw;
     font-weight: 700;
+}
+
+/* hover effect for the spans 
+    uses the same hue but varies lightness */
+.custom_radio:hover {
+    background-color: hsl(209, 50%, 80%);
+}
+
+/* changes the colour of the selected
+    custom radio button */
+/* uses the General Sibling Selector to
+    select siblings of the currently checked
+    radio button with the class .custom_radio
+    (custom styled spans) */
+.calc_type_label > input:checked ~ .custom_radio {
+    background-color: hsl(209, 50%, 30%);
+    color: #fff;
 }
 
 /* / CUSTOM RADIO GROUP */
