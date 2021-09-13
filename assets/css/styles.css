@@ -98,3 +98,29 @@
 }
 
 /* / CUSTOM RADIO GROUP */
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 360px) {
+
+    #settings {
+        width: 95vw;
+    }
+
+    /* CUSTOM RADIO GROUP */
+
+    /* / CUSTOM RADIO GROUP */
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #settings {
+        width: 60vw;
+    }
+
+    /* CUSTOM RADIO GROUP */
+
+    /* / CUSTOM RADIO GROUP */
+
+}
