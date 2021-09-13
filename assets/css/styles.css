@@ -101,10 +101,10 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 768px) {
 
     #settings {
-        width: 95vw;
+        width: 60vw;
     }
 
     /* CUSTOM RADIO GROUP */
@@ -113,13 +113,23 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
 
     #settings {
-        width: 60vw;
+        width: 90vw;
     }
 
     /* CUSTOM RADIO GROUP */
+
+    #calc_type_group {
+        width: 90%;
+    }
+
+    .custom_radio {
+        height: 15vw;
+        width: 15vw;
+        font-size: 14vw;
+    }
 
     /* / CUSTOM RADIO GROUP */
 
