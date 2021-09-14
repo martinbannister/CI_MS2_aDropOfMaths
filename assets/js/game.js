@@ -18,6 +18,8 @@ function playClick(e) {
     calcType.forEach(i => { if (i.checked) { objSettings.calcType = i.value } });
 
     console.log(objSettings);
+
+    document.getElementById('overlay_div').style.display = 'none';
 }
 
 let settingsForm = document.getElementById('frmSettings');
