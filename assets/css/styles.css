@@ -99,24 +99,46 @@ footer {
     padding: 10px;
 }
 
-label {
-    display: block;
+form div.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 10px 0 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid hsl(0, 0%, 50%);
+}
+
+/* hide border on last row of settings form */
+form div.row:last-child {
+    border: 0 none;
+}
+
+form div.col {
+    display: inline-block;
+    max-width: 49%;
+}
+
+/* label {
     margin: 5px 0;
 }
 
 input {
     margin: 5px;
-}
+} */
 
 input[type='text'] {
-    width: 20%;
+    width: 80%;
+    margin-left: 10px;
+    font-size: 2vh;
+    text-align: center;
+    border: 0 none;
 }
 
 #play_button {
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
     border-radius: 10px;
-    padding: 0 auto;
+    margin: 0 auto;
     font-size: 4vh;
 }
 
