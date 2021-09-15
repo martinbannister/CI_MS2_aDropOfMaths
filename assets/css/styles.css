@@ -45,11 +45,15 @@ html {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    height: 100%;
 }
 
 body {
+    margin: 0 auto;
+    padding: 0;
     background-color: #000;
     font-family: var(--font_family);
+    height: 100%;
 }
 
 footer {
@@ -62,10 +66,13 @@ footer {
 
 .navigation {
     list-style: none;
+    padding: 0 0 0 1vw;
 }
 
 .nav_item {
     text-decoration: none;
+    display: inline-block;
+    padding: 2vw 1vw;
 }
 
 /* ------------------ / PAGE LAYOUT ------------------ */
@@ -75,9 +82,9 @@ footer {
 /* ------------------ SETTINGS DIVS ------------------ */
 .overlay {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -200,7 +207,7 @@ input[type='text'] {
 #bg {
     background-color: #fff;
     position: absolute;
-    top: 11vh;
+    top: 10vh;
     width: 800px;
     height: 80vh;
     z-index: 1;
@@ -228,7 +235,7 @@ input[type='text'] {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
 
     #settings {
         width: 60vw;
