@@ -21,47 +21,76 @@
             <div id="settings">
                 <h1>Choose your options</h1>
                 <form id="frmSettings">
-                    <div>
-                        <p>Are you...?</p>
-                        <input type="radio" id="chk_adult" name="game_style" value="adult">
-                        <label for="chk_adult">an Adult</label>
-                        <input type="radio" id="chk_child" name="game_style" value="child" checked>
-                        <label for="chk_child">a Child</label>
+                    <p>Would you like to play as</p>
+                    <div class="row">
+                        <div class="col">
+                            <input type="radio" id="chk_adult" name="game_style" value="adult">
+                            <label for="chk_adult">an Adult</label>
+                        </div>
+                        <strong>&nbspOr&nbsp</strong>
+                        <div class="col">
+                            <input type="radio" id="chk_child" name="game_style" value="child" checked>
+                            <label for="chk_child">a Child</label>
+                        </div>
                     </div>
-                    <div>
+                    <div class="row">
                         <!-- REFERENCE: reason for not using input type="number" -->
                         <!-- https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/ -->
-                        <label for="max_num">Maximum number to be asked to calculate</label>
-                        <input type="text" id="max_num" pattern="[0-9]*" inputmode="numeric" value="10">
-                        <br>
-                        <label for=max_speed">Speed that bubbles will drop (seconds)</label>
-                        <input type="text" id="max_speed" pattern="[0-9]*" inputmode="numeric" value="6">
-                        <br>
-                        <label for="q_time">Time allowed for each question (seconds)</label>
-                        <input type="text" id="q_time" pattern="[0-9]*" inputmode="numeric" value="10">
-                        <br>
-                        <label for="max_qs">Number of questions per game</label>
-                        <input type="text" id="max_qs" pattern="[0-9]*" inputmode="numeric" value="10">
+                        <div class="col">
+                            <label for="max_num">Maximum number to be asked to calculate</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="max_num" pattern="[0-9]*" inputmode="numeric" value="10">
+                        </div>
                     </div>
-                    <div id="calc_type_group">
-                        <label class="calc_type_label">
-                            <input type="radio" name="calc_type" id="type_addition" value="add">
-                            <span class="custom_radio">+</span>
-                        </label>
-                        <label class="calc_type_label">
-                            <input type="radio" name="calc_type" id="type_subtraction" value="subtract">
-                            <span class="custom_radio">−</span>
-                        </label>
-                        <label class="calc_type_label">
-                            <input type="radio" name="calc_type" id="type_multiplication" value="multiply">
-                            <span class="custom_radio">×</span>
-                        </label>
-                        <label class="calc_type_label">
-                            <input type="radio" name="calc_type" id="type_division" value="divide">
-                            <span class="custom_radio">÷</span>
-                        </label>
+                    <div class="row">
+                        <div class="col">
+                            <label for=max_speed">Speed that bubbles will drop (seconds)</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="max_speed" pattern="[0-9]*" inputmode="numeric" value="6">
+                        </div>
                     </div>
-                    <button type="submit" id="play_button">Play</button>
+                    <div class="row">
+                        <div class="col">
+                            <label for="q_time">Time allowed for each question (seconds)</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="q_time" pattern="[0-9]*" inputmode="numeric" value="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="max_qs">Number of questions per game</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" id="max_qs" pattern="[0-9]*" inputmode="numeric" value="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="calc_type_group">
+                            <label class="calc_type_label">
+                                <input type="radio" name="calc_type" id="type_addition" value="add" required>
+                                <span class="custom_radio">+</span>
+                            </label>
+                            <label class="calc_type_label">
+                                <input type="radio" name="calc_type" id="type_subtraction" value="subtract">
+                                <span class="custom_radio">−</span>
+                            </label>
+                            <label class="calc_type_label">
+                                <input type="radio" name="calc_type" id="type_multiplication" value="multiply">
+                                <span class="custom_radio">×</span>
+                            </label>
+                            <label class="calc_type_label">
+                                <input type="radio" name="calc_type" id="type_division" value="divide">
+                                <span class="custom_radio">÷</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" id="play_button">Play</button>
+                    </div>
+
                 </form>
             </div>
         </div>
