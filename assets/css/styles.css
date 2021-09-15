@@ -8,6 +8,10 @@
     --problem_bg_colour: hsl(209, 100%, 50%);
     --footer_bg_colour: hsl(60, 100%, 50%);
     --target_result_colour: hsl(84, 100%, 59%);
+    --play_button_colour: hsl(240, 100%, 50%);
+    --custom_radio_colour: hsl(0, 60%, 50%);
+    --custom_radio_hover: hsl(0, 60%, 80%);
+    --custom_radio_checked: hsl(0, 60%, 30%);
 }
 
 :root[theme='adult'] {
@@ -17,6 +21,10 @@
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(209, 100%, 100%);
+    --play_button_colour: hsl(209, 50%, 60%);
+    --custom_radio_colour: hsl(209, 50%, 50%);
+    --custom_radio_hover: hsl(209, 50%, 80%);
+    --custom_radio_checked: hsl(209, 50%, 30%);
 }
 
 /* set defaults for page and zero out default browser padding and margins */
@@ -99,7 +107,7 @@ input[type='text'] {
     height: 4vw;
     width: 4vw;
     border-radius: 50%;
-    background-color: hsl(209, 50%, 50%);
+    background-color: var(--custom_radio_colour);
     justify-content: center;
     align-items: center;
     font-size: 3vw;
@@ -109,7 +117,7 @@ input[type='text'] {
 /* hover effect for the spans 
     uses the same hue but varies lightness */
 .custom_radio:hover {
-    background-color: hsl(209, 50%, 80%);
+    background-color: var(--custom_radio_hover);
 }
 
 /* changes the colour of the selected
@@ -119,7 +127,7 @@ input[type='text'] {
     radio button with the class .custom_radio
     (custom styled spans) */
 .calc_type_label > input:checked ~ .custom_radio {
-    background-color: hsl(209, 50%, 30%);
+    background-color: var(--custom_radio_checked);
     color: #fff;
 }
 
@@ -167,6 +175,10 @@ input[type='text'] {
     background-color: transparent;
     height: 80vh;
     z-index: 998;
+}
+
+#play_button {
+
 }
 
 /* ------------------ / GAME AREA ------------------ */
