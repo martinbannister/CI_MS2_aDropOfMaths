@@ -145,6 +145,21 @@ input[type='text'] {
     font-weight: 700;
 }
 
+#outer_container {
+    position: relative;
+    /* 80vh chosen for responsiveness allowing 10vh above and 10vh bellow */
+    height: 80vh;
+}
+
+#bg {
+    background-color: #fff;
+    position: absolute;
+    top: 10vh;
+    width: 800px;
+    height: 80vh;
+    z-index: 1;
+}
+
 /* ------------------ / GAME AREA ------------------ */
 
 /* / GAME.html --------------------------------------------------- */
