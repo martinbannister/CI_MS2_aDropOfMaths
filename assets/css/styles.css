@@ -16,6 +16,7 @@
     --custom_radio_bg_hover: hsl(0, 60%, 80%);
     --custom_radio_bg_checked: hsl(0, 60%, 30%);
     --custom_radio_text_checked: hsl(209, 100%, 100%);
+    --font_family: 'Short Stack', cursive;
 }
 
 :root[theme='adult'] {
@@ -31,6 +32,7 @@
     --custom_radio_bg_hover: hsl(209, 50%, 80%);
     --custom_radio_bg_checked: hsl(209, 50%, 30%);
     --custom_radio_text_checked: hsl(209, 100%, 100%);
+    --font_family: Arial, Helvetica, sans-serif;
 }
 
 /* set defaults for page and zero out default browser padding and margins */
@@ -44,7 +46,7 @@ html {
 
 body {
     background-color: #000;
-    font-family: 'Short Stack', cursive;
+    font-family: var(--font_family);
 }
 
 /* GAME.html --------------------------------------------------- */
