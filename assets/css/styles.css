@@ -7,6 +7,7 @@
     /* Children's theme */
     --problem_bg_colour: hsl(209, 100%, 50%);
     --footer_bg_colour: hsl(60, 100%, 50%);
+    --target_result_colour: hsl(84, 100%, 59%);
 }
 
 :root[theme='adult'] {
@@ -15,6 +16,7 @@
     --footer_bg_colour: hsl(209, 30%, 53%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
+    --target_result_colour: hsl(209, 100%, 100%);
 }
 
 /* set defaults for page and zero out default browser padding and margins */
@@ -136,6 +138,11 @@ input[type='text'] {
     font-size: 8vh;
     color: #fff;
     z-index: 997;
+}
+
+#target_result {
+    color: var(--target_result_colour);
+    font-weight: 700;
 }
 
 /* ------------------ / GAME AREA ------------------ */
