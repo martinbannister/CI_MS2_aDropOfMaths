@@ -7,6 +7,7 @@
     /* Children's theme */
     --problem_bg_colour: hsl(209, 100%, 50%);
     --footer_bg_colour: hsl(60, 100%, 50%);
+    --page_footer_bg_colour:hsl(84, 50%, 40%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(84, 100%, 59%);
@@ -23,6 +24,7 @@
     /* Grown Up theme */
     --problem_bg_colour: hsl(209, 40%, 46%);
     --footer_bg_colour: hsl(209, 30%, 53%);
+    --page_footer_bg_colour:hsl(209, 80%, 60%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(209, 100%, 100%);
@@ -35,6 +37,7 @@
     --font_family: Arial, Helvetica, sans-serif;
 }
 
+/* ------------------ PAGE LAYOUT ------------------ */
 /* set defaults for page and zero out default browser padding and margins */
 html {
     /* max-width to limit game area on larger screens */
@@ -48,6 +51,16 @@ body {
     background-color: #000;
     font-family: var(--font_family);
 }
+
+footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    height: 10vh;
+    background-color: var(--page_footer_bg_colour);
+}
+
+/* ------------------ / PAGE LAYOUT ------------------ */
 
 /* GAME.html --------------------------------------------------- */
 
