@@ -124,7 +124,18 @@ input[type='text'] {
 
 /* ------------------ GAME AREA ------------------ */
 
-
+#problem {
+    position: relative;
+    height: 10vh;
+    width: 800px;
+    background-color: var(--problem_bg_colour);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 8vh;
+    color: #fff;
+    z-index: 998;
+}
 
 /* ------------------ / GAME AREA ------------------ */
 
