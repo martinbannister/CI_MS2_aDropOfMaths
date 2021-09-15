@@ -60,6 +60,14 @@ footer {
     background-color: var(--page_footer_bg_colour);
 }
 
+.navigation {
+    list-style: none;
+}
+
+.nav_item {
+    text-decoration: none;
+}
+
 /* ------------------ / PAGE LAYOUT ------------------ */
 
 /* GAME.html --------------------------------------------------- */
