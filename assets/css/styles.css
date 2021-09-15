@@ -75,6 +75,14 @@ input[type='text'] {
     width: 20%;
 }
 
+#play_button {
+    background-color: var(--play_button_bg_colour);
+    color: var(--play_button_text_colour);
+    border-radius: 10px;
+    padding: 0 auto;
+    font-size: 4vh;
+}
+
 /* ------------------ / SETTINGS DIVS ------------------ */
 
 /* REFERENCE: Custom radio buttons technique derived from:
@@ -165,12 +173,13 @@ input[type='text'] {
     position: relative;
     /* 80vh chosen for responsiveness allowing 10vh above and 10vh bellow */
     height: 80vh;
+    width: 800px;
 }
 
 #bg {
     background-color: #fff;
     position: absolute;
-    top: 10vh;
+    top: 11vh;
     width: 800px;
     height: 80vh;
     z-index: 1;
@@ -183,14 +192,6 @@ input[type='text'] {
     background-color: transparent;
     height: 80vh;
     z-index: 998;
-}
-
-#play_button {
-    background-color: var(--play_button_bg_colour);
-    color: var(--play_button_text_colour);
-    border-radius: 10px;
-    padding: 0 auto;
-    font-size: 4vh;
 }
 
 #game_footer {
