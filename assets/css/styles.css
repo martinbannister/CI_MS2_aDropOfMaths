@@ -7,7 +7,7 @@
     /* Children's theme */
     --problem_bg_colour: hsl(209, 100%, 50%);
     --footer_bg_colour: hsl(60, 100%, 50%);
-    --page_footer_bg_colour:hsl(84, 50%, 40%);
+    --page_footer_bg_colour:hsl(84, 70%, 60%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(84, 100%, 59%);
@@ -200,7 +200,7 @@ input[type='text'] {
 #outer_container {
     position: relative;
     /* 80vh chosen for responsiveness allowing 10vh above and 10vh bellow */
-    height: 80vh;
+    height: 70vh;
     width: 800px;
 }
 
@@ -209,7 +209,7 @@ input[type='text'] {
     position: absolute;
     top: 10vh;
     width: 800px;
-    height: 80vh;
+    height: 70vh;
     z-index: 1;
 }
 
@@ -218,7 +218,7 @@ input[type='text'] {
     top: 0;
     left: 0;
     background-color: transparent;
-    height: 80vh;
+    height: 70vh;
     z-index: 998;
 }
 
