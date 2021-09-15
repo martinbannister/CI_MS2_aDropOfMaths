@@ -160,6 +160,15 @@ input[type='text'] {
     z-index: 1;
 }
 
+#game_container {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 80vh;
+    z-index: 998;
+}
+
 /* ------------------ / GAME AREA ------------------ */
 
 /* / GAME.html --------------------------------------------------- */
