@@ -193,6 +193,13 @@ input[type='text'] {
     font-size: 4vh;
 }
 
+#game_footer {
+    background-color: var(--footer_bg_colour);
+    height: 10vh;
+    width: 800px;
+    z-index: 996;
+}
+
 /* ------------------ / GAME AREA ------------------ */
 
 /* / GAME.html --------------------------------------------------- */
