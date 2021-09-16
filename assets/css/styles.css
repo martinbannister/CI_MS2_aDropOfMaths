@@ -46,6 +46,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
+    --animation_speed: 6s;
 }
 
 body {
