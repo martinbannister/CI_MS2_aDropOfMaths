@@ -82,4 +82,8 @@ function startGame(objSettings) {
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
+
+    // for testing on mobile
+    document.getElementById('countdown').textContent = CONTAINER_HEIGHT;
+    document.getElementById('score').textContent = CONTAINER_WIDTH;
 }
