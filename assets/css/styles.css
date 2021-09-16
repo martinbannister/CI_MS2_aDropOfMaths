@@ -7,6 +7,7 @@
     /* Children's theme */
     --problem_bg_colour: hsl(209, 100%, 50%);
     --footer_bg_colour: hsl(60, 100%, 50%);
+    --footer_text_colour: hsl(240, 100%, 50%);
     --page_footer_bg_colour:hsl(84, 70%, 60%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
@@ -24,6 +25,7 @@
     /* Grown Up theme */
     --problem_bg_colour: hsl(209, 40%, 46%);
     --footer_bg_colour: hsl(209, 30%, 53%);
+    --footer_text_colour: hsl(209, 50%, 15%)
     --page_footer_bg_colour:hsl(209, 80%, 60%);
     --bubble_colour:hsl(209, 100%, 53%);
     --bubble_text_colour:hsl(209,100%,100%);
