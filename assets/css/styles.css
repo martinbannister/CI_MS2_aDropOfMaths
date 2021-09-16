@@ -276,6 +276,12 @@ input[type='text'] {
 
     /* CUSTOM RADIO GROUP */
 
+    .custom_radio {
+        height: 8vw;
+        width: 8vw;
+        font-size: 7vw;
+    }
+
     /* / CUSTOM RADIO GROUP */
 
 }
