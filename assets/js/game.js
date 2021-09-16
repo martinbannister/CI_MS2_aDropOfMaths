@@ -50,3 +50,18 @@ function themeChange() {
         document.documentElement.setAttribute('theme', 'adult');
     }
 }
+
+function startGame(objSettings) {
+    // constant values determined by chosen user settings
+    const calcType = objSettings.calcType;
+    const maxNum = objSettings.maxNumber;
+    const speed = objSettings.speed;
+    const timeLimit = objSettings.qTime;
+    const qs = objSettings.noOfQs;
+
+    // get reference to the game container
+    const container = document.getElementById('game_container');
+    // get constants for container area to user for bubble positions
+    const CONTAINER_HEIGHT = parseInt(getComputedStyle(container).getPropertyValue('height'));
+    const CONTAINER_WIDTH = parseInt(getComputedStyle(container).getPropertyValue('width'));
+}
