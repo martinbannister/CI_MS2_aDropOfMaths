@@ -41,6 +41,10 @@ settingsForm.addEventListener('submit', playClick);
 let radioGameStyle = document.getElementsByName('game_style');
 radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange) });
 
+// add event listener to display settings div after it's been closed
+let spanSettings = document.getElementById('showSettings');
+spanSettings.addEventListener('click', () => document.getElementById('overlay_div').style.display = 'flex');
+
 /**
  * Adds or removes (toggles) the theme attribute of the document to facilitate a style change
  */
