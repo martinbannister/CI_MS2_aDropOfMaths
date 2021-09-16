@@ -28,6 +28,8 @@ function playClick(e) {
 
     // hide/remove the style overlay
     document.getElementById('overlay_div').style.display = 'none';
+
+    startGame(objSettings);
 }
 
 // add event listener to form submit (play button)
@@ -77,4 +79,7 @@ function startGame(objSettings) {
     // minus one prevents the number going over the maximum
     // plus one keeps the number above zero
     let target_num = Math.floor(Math.random() * (maxNum - 1) + 1);
+
+    // populate the target number div
+    document.getElementById('target_result').textContent = target_num;
 }
