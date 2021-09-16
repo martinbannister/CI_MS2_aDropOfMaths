@@ -32,19 +32,6 @@ function playClick(e) {
     startGame(objSettings);
 }
 
-// add event listener to form submit (play button)
-let settingsForm = document.getElementById('frmSettings');
-settingsForm.addEventListener('submit', playClick);
-
-// add event listener to Adult/Child radio buttons
-// to vary the theme before Play is clicked (form is submitted)
-let radioGameStyle = document.getElementsByName('game_style');
-radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange) });
-
-// add event listener to display settings div after it's been closed
-let spanSettings = document.getElementById('show_settings');
-spanSettings.addEventListener('click', () => document.getElementById('overlay_div').style.display = 'flex');
-
 /**
  * Adds or removes (toggles) the theme attribute of the document to facilitate a style change
  */
@@ -57,6 +44,11 @@ function themeChange() {
     }
 }
 
+/**
+ * Sets up variables from the passed in object containing settings to be used in the game
+ * Launches the game
+ * @param {object} objSettings An object containing the games settings
+ */
 function startGame(objSettings) {
     // constant values determined by chosen user settings
     const calcType = objSettings.calcType;
@@ -87,7 +79,19 @@ function startGame(objSettings) {
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
 
-    // for testing on mobile
-    document.getElementById('countdown').textContent = CONTAINER_HEIGHT;
-    document.getElementById('score').textContent = CONTAINER_WIDTH;
 }
+
+/* ------------------ EVENT HANDLERS ------------------ */
+
+// add event listener to form submit (play button)
+let settingsForm = document.getElementById('frmSettings');
+settingsForm.addEventListener('submit', playClick);
+
+// add event listener to Adult/Child radio buttons
+// to vary the theme before Play is clicked (form is submitted)
+let radioGameStyle = document.getElementsByName('game_style');
+radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange) });
+
+// add event listener to display settings div after it's been closed
+let spanSettings = document.getElementById('show_settings');
+spanSettings.addEventListener('click', () => document.getElementById('overlay_div').style.display = 'flex');
