@@ -214,7 +214,7 @@ input[type='text'] {
 #problem {
     position: relative;
     height: 10vh;
-    width: 800px;
+    /* width: 800px; */
     background-color: var(--problem_bg_colour);
     display: flex;
     justify-content: space-around;
@@ -233,15 +233,16 @@ input[type='text'] {
     position: relative;
     /* 80vh chosen for responsiveness allowing 10vh above and 10vh bellow */
     height: 70vh;
-    width: 800px;
+    /* width: 800px; */
 }
 
 #bg {
     background-color: #fff;
     position: absolute;
     top: 10vh;
-    width: 800px;
+    max-width: 800px;
     height: 70vh;
+    width: 100%;
     z-index: 1;
 }
 
@@ -257,7 +258,7 @@ input[type='text'] {
 #game_footer {
     background-color: var(--footer_bg_colour);
     height: 10vh;
-    width: 800px;
+    /* width: 800px; */
     z-index: 996;
 }
 
