@@ -40,6 +40,13 @@
 }
 
 /* ------------------ PAGE LAYOUT ------------------ */
+
+/* classes for resizing material design icons */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
 /* set defaults for page and zero out default browser padding and margins */
 html {
     /* max-width to limit game area on larger screens */
@@ -262,6 +269,7 @@ input[type='text'] {
     height: 10vh;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     z-index: 996;
 }
 
