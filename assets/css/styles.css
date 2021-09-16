@@ -265,7 +265,7 @@ input[type='text'] {
     z-index: 996;
 }
 
-.game_footer_items {
+.game_footer_item {
     color: var(--footer_text_colour);
     font-size: 8vh;
 }
