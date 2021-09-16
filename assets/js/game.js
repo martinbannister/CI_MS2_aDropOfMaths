@@ -64,4 +64,17 @@ function startGame(objSettings) {
     // get constants for container area to user for bubble positions
     const CONTAINER_HEIGHT = parseInt(getComputedStyle(container).getPropertyValue('height'));
     const CONTAINER_WIDTH = parseInt(getComputedStyle(container).getPropertyValue('width'));
+
+    // hue for colouring bubbles in child theme
+    let hue = 0;
+    // opposite of hue for contrasting text colour
+    let hueOpp = 0;
+
+    // 'clicks' used to count the number of clicks to determine which operand div to fill
+    let clicks = 0;
+
+    // target number for the current question
+    // minus one prevents the number going over the maximum
+    // plus one keeps the number above zero
+    let target_num = Math.floor(Math.random() * (maxNum - 1) + 1);
 }
