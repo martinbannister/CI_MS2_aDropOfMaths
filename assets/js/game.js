@@ -100,6 +100,34 @@ function startGame(objSettings) {
 
     document.getElementById('operator').textContent = operator;
 
+    draw();
+
+    setTimeout(function () {
+        cancelAnimationFrame(rAf);
+        document.getElementById('countdown').textContent = 'done';
+    }, 15000);
+
+}
+
+let startTime = null;
+let rAf;
+let i = 0;
+
+function draw(timestamp) {
+    if (!startTime) {
+        startTime = timestamp;
+    }
+
+    currentTime = timestamp - startTime;
+
+    // Do something based on current time
+    if (currentTime >= 1000) {
+        startTime = timestamp;
+        ++i;
+        document.getElementById('countdown').textContent = i;
+    }
+
+    rAf = requestAnimationFrame(draw);
 }
 
 /* ------------------ EVENT HANDLERS ------------------ */
