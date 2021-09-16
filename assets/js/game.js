@@ -71,6 +71,8 @@ function startGame(objSettings) {
     // 'clicks' used to count the number of clicks to determine which operand div to fill
     let clicks = 0;
 
+    let operator = '';
+
     // target number for the current question
     // minus one prevents the number going over the maximum
     // plus one keeps the number above zero
@@ -78,6 +80,25 @@ function startGame(objSettings) {
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
+
+    switch (calcType) {
+        case 'add':
+            operator = '+'
+            break;
+        case 'subtract':
+            operator = '−'
+            break;
+        case 'multiply':
+            operator = '×'
+            break;
+        case 'divide':
+            operator = '÷'
+            break;
+        default:
+            console.log('Calc Type selection', 'something went wrong');
+    }
+
+    document.getElementById('operator').textContent = operator;
 
 }
 
