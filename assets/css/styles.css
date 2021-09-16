@@ -258,8 +258,18 @@ input[type='text'] {
 #game_footer {
     background-color: var(--footer_bg_colour);
     height: 10vh;
-    /* width: 800px; */
+    display: flex;
+    justify-content: space-around;
     z-index: 996;
+}
+
+.game_footer_items {
+    color: var(--footer_text_colour);
+    font-size: 8vh;
+}
+
+#show_settings {
+    cursor: pointer;
 }
 
 /* ------------------ / GAME AREA ------------------ */
