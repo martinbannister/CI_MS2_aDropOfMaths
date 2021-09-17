@@ -1,3 +1,8 @@
+
+//  declare an empty object to hold settings used throughout functions
+const gblS = {};
+
+
 /**
  * Stores select game settings in an object to be passed to another function to begin game play with selected options
  * @param {object} e the element whos event triggered the function
@@ -32,6 +37,8 @@ function playClick(e) {
     startGame(objSettings);
 }
 
+
+
 /**
  * Adds or removes (toggles) the theme attribute of the document to facilitate a style change
  */
@@ -44,6 +51,8 @@ function themeChange() {
     }
 }
 
+
+
 /**
  * Sets up variables from the passed in object containing settings to be used in the game
  * Launches the game
@@ -51,54 +60,54 @@ function themeChange() {
  */
 function startGame(objSettings) {
     // constant values determined by chosen user settings
-    const calcType = objSettings.calcType;
-    const maxNum = objSettings.maxNumber;
-    const speed = objSettings.speed;
-    const timeLimit = objSettings.qTime;
-    const qs = objSettings.noOfQs;
+    gblS.calcType = objSettings.calcType;
+    gblS.maxNum = objSettings.maxNumber;
+    gblS.speed = objSettings.speed;
+    gblS.timeLimit = objSettings.qTime;
+    gblS.qs = objSettings.noOfQs;
 
     // get reference to the game container
-    const container = document.getElementById('game_container');
+    gblS.container = document.getElementById('game_container');
     // get constants for container area to user for bubble positions
-    const CONTAINER_HEIGHT = parseInt(getComputedStyle(container).getPropertyValue('height'));
-    const CONTAINER_WIDTH = parseInt(getComputedStyle(container).getPropertyValue('width'));
+    gblS.CONTAINER_HEIGHT = parseInt(getComputedStyle(gblS.container).getPropertyValue('height'));
+    gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
 
     // hue for colouring bubbles in child theme
-    let hue = 0;
+    gblS.hue = 0;
     // opposite of hue for contrasting text colour
-    let hueOpp = 0;
+    gblS.hueOpp = 0;
 
     // 'clicks' used to count the number of clicks to determine which operand div to fill
-    let clicks = 0;
+    gblS.clicks = 0;
 
     let operator = '';
 
     // target number for the current question
     // minus one prevents the number going over the maximum
     // plus one keeps the number above zero
-    let target_num = Math.floor(Math.random() * (maxNum - 1) + 1);
+    let target_num = Math.floor(Math.random() * (gblS.maxNum - 1) + 1);
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
 
-    switch (calcType) {
+    switch (gblS.calcType) {
         case 'add':
-            operator = '+'
+            gblS.operator = '+'
             break;
         case 'subtract':
-            operator = '−'
+            gblS.operator = '−'
             break;
         case 'multiply':
-            operator = '×'
+            gblS.operator = '×'
             break;
         case 'divide':
-            operator = '÷'
+            gblS.operator = '÷'
             break;
         default:
             console.log('Calc Type selection', 'something went wrong');
     }
 
-    document.getElementById('operator').textContent = operator;
+    document.getElementById('operator').textContent = gblS.operator;
 
     draw();
 
