@@ -64,6 +64,19 @@ function themeChange() {
 
 
 /**
+ * Generates a random number limited by the maximum number passed in
+ * @param {number} maxNumber the maximum number to generate
+ * @returns {number} a randomly generated number
+ */
+function generateNumber(maxNumber) {
+    // minus one prevents the number going over the maximum
+    // plus one keeps the number above zero
+    return Math.floor(Math.random() * (maxNumber - 1) + 1);
+}
+
+
+
+/**
  * Sets up variables from the passed in object containing settings to be used in the game
  * Launches the game
  * @param {object} objSettings An object containing the games settings
@@ -98,9 +111,7 @@ function startGame(objSettings) {
     gblS.clicks = 0;
 
     // target number for the current question
-    // minus one prevents the number going over the maximum
-    // plus one keeps the number above zero
-    let target_num = Math.floor(Math.random() * (gblS.maxNum - 1) + 1);
+    let target_num = generateNumber();
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
