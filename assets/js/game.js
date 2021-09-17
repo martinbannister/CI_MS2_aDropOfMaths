@@ -154,6 +154,7 @@ function startGame(objSettings) {
 }
 
 
+
 /**
  * Generates bubbles and counts timer down
  * @param {object} timestamp The timestamp passed in by being called by requestAnimationFrame()
@@ -188,6 +189,8 @@ function bubbleDrop(timestamp) {
     rAf = requestAnimationFrame(bubbleDrop);
 }
 
+
+
 /**
  * Creates a new randomly horizontal positioned div within the limits of the game container
  * styles appropriately, attaches click event listener and adds to the game container
@@ -214,6 +217,8 @@ function createBubble() {
     gblS.hue += 15;
 }
 
+
+
 /**
  * Handles bubble click. Inserts number into appropriate operand based on how many clicks have been recorded and removes div
  * @param {object} e Event that called the function
@@ -228,6 +233,12 @@ function bubbleClick(e) {
     // if clicks is above zero perform a check to see if the corrent answer has been reached
     if (gblS.clicks > 0) {
         let resultCheck = checkResult();
+        if (resultCheck) {
+            // call a function for next question
+            answerCorrect();
+        } else {
+            // briefly display msg_wrong
+        }
     }
     // if clicks is above zero then set to zero else add 1
     // will always be either one or zero
@@ -235,6 +246,8 @@ function bubbleClick(e) {
     // remove clicked bubble from container
     gblS.container.removeChild(e.target);
 }
+
+
 
 /**
  * Checks if clicked numbers result in the correct answer
@@ -274,6 +287,16 @@ function checkResult() {
         return false;
     }
 }
+
+
+
+function answerCorrect() {
+    let msg = document.getElementById('msg_correct');
+    msg.style.display = 'flex';
+
+    setTimeout(() => { msg.style.display = 'none' }, 1000, msg);
+}
+
 
 /* ------------------ EVENT HANDLERS ------------------ */
 
