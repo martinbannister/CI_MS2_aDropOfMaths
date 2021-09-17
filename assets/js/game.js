@@ -162,6 +162,11 @@ function bubbleDrop(timestamp) {
         gblS.countdown.textContent = --intCountdown;
     }
 
+    // when the countdown reaches zero remove all bubbles not clicked
+    if (intCountdown === 0) {
+        gblS.container.replaceChildren();
+    }
+
     rAf = requestAnimationFrame(bubbleDrop);
 }
 
@@ -185,6 +190,8 @@ function createBubble() {
     newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
     newBubble.addEventListener('click', bubbleClick);
     gblS.container.appendChild(newBubble);
+    // increment hue so for child theme bubble colours change
+    gblS.hue += 15;
 }
 
 /**
