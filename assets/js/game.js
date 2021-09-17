@@ -230,3 +230,11 @@ radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange) 
 // add event listener to display settings div after it's been closed
 let spanSettings = document.getElementById('show_settings');
 spanSettings.addEventListener('click', () => document.getElementById('overlay_div').style.display = 'flex');
+
+// add click listener to overlay_div to hide div if not wanting to play the game
+let divOverlay = document.getElementById('overlay_div');
+divOverlay.addEventListener('click', (e) => {
+    if (e.target.id === 'overlay_div') {
+        e.target.style.display = 'none'
+    }
+});
