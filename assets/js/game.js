@@ -70,8 +70,8 @@ function themeChange() {
  */
 function generateNumber(maxNumber) {
     // minus one prevents the number going over the maximum
-    // plus one keeps the number above zero
-    return Math.floor(Math.random() * (maxNumber - 1) + 1);
+    // REMOVED - zero may be needed: plus one keeps the number above zero
+    return Math.floor(Math.random() * (maxNumber));
 }
 
 
@@ -184,6 +184,8 @@ function bubbleDrop(timestamp) {
         gblS.container.replaceChildren();
         gblS.operand1.textContent = '';
         gblS.operand2.textContent = '';
+        let msg = document.getElementById('msg_lose');
+        msg.style.display = 'flex';
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
@@ -320,3 +322,10 @@ divOverlay.addEventListener('click', (e) => {
         e.target.style.display = 'none'
     }
 });
+
+// add click event listener to msg_lose div to restart the game
+let msgLose = document.getElementById('msg_lose');
+msgLose.addEventListener('click', () => {
+    document.getElementById('msg_lose').style.display = 'none';
+    document.getElementById('overlay').style.display = 'flex';
+})
