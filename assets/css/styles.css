@@ -162,24 +162,28 @@ input[type='text'] {
     top: 0;
     left: 0;
     display: none;
+    justify-content: center;
+    align-items: center;
     z-index: 999;
 }
 
 .message {
     margin: auto;
-    background-color: #fff;
     border-radius: 15px;
     width: 60vw;
     max-height: 95vh;
     padding: 10px;
-    font-size: 20vw;
+    font-size: 10vw;
+    text-align: center;
 }
 
 .success {
+    background-color: var(--problem_bg_colour);
     color: var(--message_success_colour);
 }
 
 .failure {
+    background-color: var(--footer_bg_colour);
     color: var(--message_failure_colour);
 }
 
