@@ -196,10 +196,20 @@ function createBubble() {
 
 /**
  * Handles bubble click. Inserts number into appropriate operand based on how many clicks have been recorded and removes div
- * @param {object} e Object that triggered the event
+ * @param {object} e Event that called the function
  */
 function bubbleClick(e) {
-
+    // set target element name based on number of clicks
+    /* if a click has not been registered then operand1 is
+        chosen, else operand2 is chosen */
+    let targetDiv = gblS.clicks === 0 ? 'operand1' : 'operand2';
+    // populates the determined operand div with the number of the bubble clicked
+    document.getElementById(targetDiv).textContent = e.target.textContent;
+    // if clicks is above zero then set to zero else add 1
+    // will always be either one or zero
+    gblS.clicks = gblS.clicks > 0 ? 0 : +1;
+    // remove clicked bubble from container
+    gblS.container.removeChild(e.target);
 }
 
 /* ------------------ EVENT HANDLERS ------------------ */
