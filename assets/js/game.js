@@ -220,6 +220,10 @@ function bubbleClick(e) {
     gblS.container.removeChild(e.target);
 }
 
+/**
+ * Checks if clicked numbers result in the correct answer
+ * @returns Boolean Whether result is correct or not
+ */
 function checkResult() {
     let op1 = parseInt(document.getElementById('operand_1').textContent);
     let op2 = parseInt(document.getElementById('operand_2').textContent);
