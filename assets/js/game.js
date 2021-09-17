@@ -156,6 +156,7 @@ function bubbleDrop(timestamp) {
 
     /* check if 1 or more seconds have passed since
         the last iteration */
+    createBubble();
     if (currentTime >= 1000) {
         startTime = timestamp;
         gblS.countdown.textContent = --intCountdown;
@@ -172,7 +173,7 @@ function createBubble() {
     let newBubble = document.createElement('div');
     let size = Math.random() * (100 - 50) + 50;
     let position = Math.floor(Math.random() * gblS.CONTAINER_WIDTH);
-    gblS.hueOpp = (hue + 180) % 360;
+    gblS.hueOpp = (gblS.hue + 180) % 360;
 
     newBubble.classList.add('bubble');
     newBubble.textContent = Math.floor(Math.random() * (gblS.maxNum - 1) + 1);
@@ -184,6 +185,14 @@ function createBubble() {
     newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
     newBubble.addEventListener('click', bubbleClick);
     gblS.container.appendChild(newBubble);
+}
+
+/**
+ * Handles bubble click. Inserts number into appropriate operand based on how many clicks have been recorded and removes div
+ * @param {object} e Object that triggered the event
+ */
+function bubbleClick(e) {
+
 }
 
 /* ------------------ EVENT HANDLERS ------------------ */
