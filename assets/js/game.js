@@ -2,6 +2,14 @@
 //  declare an empty object to hold settings used throughout functions
 const gblS = {};
 
+// global variables required by bubbleDrop()
+/* declared globally otherwise they'd be
+    overwitten by each iteration of the
+    function and never change */
+let startTime = null;
+let rAf;
+let intCountdown = null;
+
 
 /**
  * Stores select game settings in an object to be passed to another function to begin game play with selected options
@@ -61,10 +69,10 @@ function themeChange() {
 function startGame(objSettings) {
     // constant values determined by chosen user settings
     gblS.calcType = objSettings.calcType;
-    gblS.maxNum = objSettings.maxNumber;
-    gblS.speed = objSettings.speed;
-    gblS.timeLimit = objSettings.qTime;
-    gblS.qs = objSettings.noOfQs;
+    gblS.maxNum = parseInt(objSettings.maxNumber);
+    gblS.speed = parseInt(objSettings.speed);
+    gblS.timeLimit = parseInt(objSettings.qTime);
+    gblS.qs = parseInt(objSettings.noOfQs);
 
     // get reference to the game container
     gblS.container = document.getElementById('game_container');
@@ -80,8 +88,6 @@ function startGame(objSettings) {
     // 'clicks' used to count the number of clicks to determine which operand div to fill
     gblS.clicks = 0;
 
-    let operator = '';
-
     // target number for the current question
     // minus one prevents the number going over the maximum
     // plus one keeps the number above zero
@@ -90,6 +96,8 @@ function startGame(objSettings) {
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
 
+    /* store the symbol operator for display based
+        on the calcType string */
     switch (gblS.calcType) {
         case 'add':
             gblS.operator = '+'
@@ -107,36 +115,49 @@ function startGame(objSettings) {
             console.log('Calc Type selection', 'something went wrong');
     }
 
+    // display the chosen operator
     document.getElementById('operator').textContent = gblS.operator;
 
-    draw();
+    // set countdown timer to starting/maximum value
+    document.getElementById('countdown').textContent = gblS.timeLimit;
 
+    // call bubble creation function for the first time
+    bubbleDrop();
+
+    // stop bubble creation after time limit
+    // plus one used to ensure timer does not stop early
     setTimeout(function () {
         cancelAnimationFrame(rAf);
-        document.getElementById('countdown').textContent = 'done';
-    }, 15000);
+        // document.getElementById('countdown').textContent = 'done';
+    }, ((gblS.timeLimit + 1) * 1000));
 
 }
 
-let startTime = null;
-let rAf;
-let i = 0;
 
-function draw(timestamp) {
+/**
+ * Generates bubbles and counts timer down
+ * @param {object} timestamp The timestamp passed in by being called by requestAnimationFrame()
+ */
+function bubbleDrop(timestamp) {
+
+    if (!intCountdown) {
+        intCountdown = gblS.timeLimit;
+    }
+
     if (!startTime) {
         startTime = timestamp;
     }
 
     currentTime = timestamp - startTime;
 
-    // Do something based on current time
+    /* check if 1 or more seconds have passed since
+        the last iteration */
     if (currentTime >= 1000) {
         startTime = timestamp;
-        ++i;
-        document.getElementById('countdown').textContent = i;
+        document.getElementById('countdown').textContent = --intCountdown;
     }
 
-    rAf = requestAnimationFrame(draw);
+    rAf = requestAnimationFrame(bubbleDrop);
 }
 
 /* ------------------ EVENT HANDLERS ------------------ */
