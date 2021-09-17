@@ -327,5 +327,5 @@ divOverlay.addEventListener('click', (e) => {
 let msgLose = document.getElementById('msg_lose');
 msgLose.addEventListener('click', () => {
     document.getElementById('msg_lose').style.display = 'none';
-    document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('overlay_div').style.display = 'flex';
 })
