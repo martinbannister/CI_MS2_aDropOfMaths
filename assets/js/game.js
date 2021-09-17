@@ -71,7 +71,7 @@ function themeChange() {
 function generateNumber(maxNumber) {
     // minus one prevents the number going over the maximum
     // REMOVED - zero may be needed: plus one keeps the number above zero
-    return Math.floor(Math.random() * (maxNumber));
+    return Math.floor(Math.random() * (maxNumber - 1) + 1);
 }
 
 
@@ -186,6 +186,7 @@ function bubbleDrop(timestamp) {
         gblS.operand2.textContent = '';
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
+        cancelAnimationFrame(rAf);
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
@@ -204,7 +205,7 @@ function createBubble() {
     gblS.hueOpp = (gblS.hue + 180) % 360;
 
     newBubble.classList.add('bubble');
-    newBubble.textContent = Math.floor(Math.random() * (gblS.maxNum - 1) + 1);
+    newBubble.textContent = Math.floor(Math.random() * (gblS.maxNum - 1));
     newBubble.style.left = (position + size) > gblS.CONTAINER_WIDTH ? `${position - size}px` : `${position}px`;
     newBubble.style.width = `${size}px`;
     newBubble.style.height = `${size}px`;
@@ -240,6 +241,7 @@ function bubbleClick(e) {
             answerCorrect();
         } else {
             // briefly display msg_wrong
+            answerWrong();
         }
     }
     // if clicks is above zero then set to zero else add 1
@@ -295,8 +297,21 @@ function checkResult() {
 function answerCorrect() {
     let msg = document.getElementById('msg_correct');
     msg.style.display = 'flex';
+    cancelAnimationFrame(rAf);
 
     setTimeout(() => { msg.style.display = 'none' }, 1000, msg);
+
+    // generate new question
+}
+
+
+
+function answerWrong() {
+    let msg = document.getElementById('msg_wrong');
+    msg.style.display = 'flex';
+    // cancelAnimationFrame(rAf);
+
+    setTimeout(() => { msg.style.display = 'none' }, 500, msg);
 }
 
 
