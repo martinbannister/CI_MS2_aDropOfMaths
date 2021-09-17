@@ -74,8 +74,12 @@ function startGame(objSettings) {
     gblS.timeLimit = parseInt(objSettings.qTime);
     gblS.qs = parseInt(objSettings.noOfQs);
 
-    // get reference to the game container
+    // store reference to the game container
     gblS.container = document.getElementById('game_container');
+    // store reference to countdown time div
+    gblS.countdown = document.getElementById('countdown');
+    // store reference to score div
+    gblS.score = document.getElementById('score');
     // get constants for container area to user for bubble positions
     gblS.CONTAINER_HEIGHT = parseInt(getComputedStyle(gblS.container).getPropertyValue('height'));
     gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
@@ -119,7 +123,7 @@ function startGame(objSettings) {
     document.getElementById('operator').textContent = gblS.operator;
 
     // set countdown timer to starting/maximum value
-    document.getElementById('countdown').textContent = gblS.timeLimit;
+    gblS.countdown.textContent = gblS.timeLimit;
 
     // call bubble creation function for the first time
     bubbleDrop();
@@ -154,11 +158,13 @@ function bubbleDrop(timestamp) {
         the last iteration */
     if (currentTime >= 1000) {
         startTime = timestamp;
-        document.getElementById('countdown').textContent = --intCountdown;
+        gblS.countdown.textContent = --intCountdown;
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
 }
+
+
 
 /* ------------------ EVENT HANDLERS ------------------ */
 
