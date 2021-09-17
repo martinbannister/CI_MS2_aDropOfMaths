@@ -37,6 +37,8 @@ function playClick(e) {
     let calcType = document.getElementsByName('calc_type');
     calcType.forEach(i => { if (i.checked) { objSettings.calcType = i.value } });
 
+    document.documentElement.style.setProperty('--animation_speed', `${objSettings.speed}s`)
+
     console.log(objSettings);
 
     // hide/remove the style overlay
