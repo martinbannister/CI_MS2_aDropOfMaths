@@ -284,6 +284,32 @@ input[type='text'] {
 
 /* ------------------ / GAME AREA ------------------ */
 
+/* ------------------ BUBBLES ------------------ */
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--bubble_colour);
+    color: var(--bubble_text_colour);
+    font-size: 30px;
+    text-align: center;
+    padding-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: bubble_drop;
+    animation-duration: var(--animation_speed);
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes bubble_drop {
+    from {top: 0;}
+    to {top: 60vh;}
+}
+
+/* ------------------ / BUBBLES ------------------ */
+
 /* / GAME.html --------------------------------------------------- */
 
 /* MEDIA QUERIES */
