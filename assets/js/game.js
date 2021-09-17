@@ -202,7 +202,7 @@ function bubbleClick(e) {
     // set target element name based on number of clicks
     /* if a click has not been registered then operand1 is
         chosen, else operand2 is chosen */
-    let targetDiv = gblS.clicks === 0 ? 'operand1' : 'operand2';
+    let targetDiv = gblS.clicks === 0 ? 'operand_1' : 'operand_2';
     // populates the determined operand div with the number of the bubble clicked
     document.getElementById(targetDiv).textContent = e.target.textContent;
     // if clicks is above zero then set to zero else add 1
