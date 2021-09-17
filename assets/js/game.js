@@ -82,6 +82,9 @@ function startGame(objSettings) {
     gblS.countdown = document.getElementById('countdown');
     // store reference to score div
     gblS.score = document.getElementById('score');
+    // store operand divs
+    gblS.operand1 = document.getElementById('operand_1');
+    gblS.operand2 = document.getElementById('operand_2');
     // get constants for container area to user for bubble positions
     gblS.CONTAINER_HEIGHT = parseInt(getComputedStyle(gblS.container).getPropertyValue('height'));
     gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
@@ -167,6 +170,8 @@ function bubbleDrop(timestamp) {
     // when the countdown reaches zero remove all bubbles not clicked
     if (intCountdown === 0) {
         gblS.container.replaceChildren();
+        gblS.operand1.textContent = '';
+        gblS.operand2.textContent = '';
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
@@ -250,6 +255,8 @@ function checkResult() {
 
     if (result === targetNum) {
         console.log(true);
+        gblS.operand1.textContent = '';
+        gblS.operand2.textContent = '';
         return true;
     } else {
         console.log(false);
