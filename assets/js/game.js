@@ -156,8 +156,8 @@ function bubbleDrop(timestamp) {
 
     /* check if 1 or more seconds have passed since
         the last iteration */
-    createBubble();
     if (currentTime >= 1000) {
+        createBubble();
         startTime = timestamp;
         gblS.countdown.textContent = --intCountdown;
     }
