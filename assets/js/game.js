@@ -209,11 +209,48 @@ function bubbleClick(e) {
     let targetDiv = gblS.clicks === 0 ? 'operand_1' : 'operand_2';
     // populates the determined operand div with the number of the bubble clicked
     document.getElementById(targetDiv).textContent = e.target.textContent;
+    // if clicks is above zero perform a check to see if the corrent answer has been reached
+    if (gblS.clicks > 0) {
+        let resultCheck = checkResult();
+    }
     // if clicks is above zero then set to zero else add 1
     // will always be either one or zero
     gblS.clicks = gblS.clicks > 0 ? 0 : +1;
     // remove clicked bubble from container
     gblS.container.removeChild(e.target);
+}
+
+function checkResult() {
+    let op1 = parseInt(document.getElementById('operand_1').textContent);
+    let op2 = parseInt(document.getElementById('operand_2').textContent);
+    let targetNum = parseInt(document.getElementById('target_result').textContent);
+
+    let result = 0;
+
+    switch (gblS.operator) {
+        case '+':
+            result = op1 + op2;
+            break;
+        case '−':
+            result = op1 - op2;
+            break;
+        case '×':
+            result = op1 * op2;
+            break;
+        case '÷':
+            result = op1 / op2;
+            break;
+        default:
+            console.log('checkResult()', 'switch operator check failed');
+    }
+
+    if (result === targetNum) {
+        console.log(true);
+        return true;
+    } else {
+        console.log(false);
+        return false;
+    }
 }
 
 /* ------------------ EVENT HANDLERS ------------------ */
