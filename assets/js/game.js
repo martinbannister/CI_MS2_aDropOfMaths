@@ -189,6 +189,8 @@ function createBubble() {
     newBubble.style.backgroundColor = `hsl(${gblS.hue}, 100%, 50%)`;
     newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
     newBubble.addEventListener('click', bubbleClick);
+    // add event listener to remove bubble from DOM when animation ends
+    newBubble.addEventListener('animationend', () => gblS.container.removeChild(newBubble));
     gblS.container.appendChild(newBubble);
     // increment hue so for child theme bubble colours change
     gblS.hue += 15;
