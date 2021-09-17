@@ -1,5 +1,5 @@
 
-//  declare an empty object to hold settings used throughout functions
+//  declare an empty object to hold settings used throughout functions (global (gbl) Settings (S))
 const gblS = {};
 
 // global variables required by bubbleDrop()
@@ -164,7 +164,27 @@ function bubbleDrop(timestamp) {
     rAf = requestAnimationFrame(bubbleDrop);
 }
 
+/**
+ * Creates a new randomly horizontal positioned div within the limits of the game container
+ * styles appropriately, attaches click event listener and adds to the game container
+ */
+function createBubble() {
+    let newBubble = document.createElement('div');
+    let size = Math.random() * (100 - 50) + 50;
+    let position = Math.floor(Math.random() * gblS.CONTAINER_WIDTH);
+    gblS.hueOpp = (hue + 180) % 360;
 
+    newBubble.classList.add('bubble');
+    newBubble.textContent = Math.floor(Math.random() * (gblS.maxNum - 1) + 1);
+    newBubble.style.left = (position + size) > gblS.CONTAINER_WIDTH ? `${position - size}px` : `${position}px`;
+    newBubble.style.width = `${size}px`;
+    newBubble.style.height = `${size}px`;
+    newBubble.style.top = 0 - `${size}px`;
+    newBubble.style.backgroundColor = `hsl(${gblS.hue}, 100%, 50%)`;
+    newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
+    newBubble.addEventListener('click', bubbleClick);
+    gblS.container.appendChild(newBubble);
+}
 
 /* ------------------ EVENT HANDLERS ------------------ */
 
