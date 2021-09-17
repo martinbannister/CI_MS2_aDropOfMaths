@@ -111,7 +111,7 @@ function startGame(objSettings) {
     gblS.clicks = 0;
 
     // target number for the current question
-    let target_num = generateNumber();
+    let target_num = generateNumber(gblS.maxNum);
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
