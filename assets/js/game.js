@@ -9,6 +9,7 @@ const gblS = {};
 let startTime = null;
 let rAf;
 let intCountdown = null;
+let timeoutId = null;
 
 
 /**
@@ -145,7 +146,7 @@ function startGame(objSettings) {
     bubbleDrop();
 
     // stop bubble creation after time limit
-    startTimeLimit();
+    timeoutId = startTimeLimit();
 
 }
 
@@ -157,11 +158,14 @@ function startGame(objSettings) {
  */
 function bubbleDrop(timestamp) {
 
+    console.log('bubbleDrop started');
     if (!intCountdown) {
+        console.log('intCountdown not set');
         intCountdown = gblS.timeLimit;
     }
 
     if (!startTime) {
+        console.log('startTime not set');
         startTime = timestamp;
     }
 
@@ -170,6 +174,7 @@ function bubbleDrop(timestamp) {
     /* check if 1 or more seconds have passed since
         the last iteration */
     if (currentTime >= 1000) {
+        console.log('1s has passed createBubble');
         createBubble();
         startTime = timestamp;
         gblS.countdown.textContent = --intCountdown;
@@ -177,12 +182,13 @@ function bubbleDrop(timestamp) {
 
     // when the countdown reaches zero remove all bubbles not clicked
     if (intCountdown === 0) {
+        console.log('countdown has ended, sorry');
+        cancelAnimationFrame(rAf);
         gblS.container.replaceChildren();
         gblS.operand1.textContent = '';
         gblS.operand2.textContent = '';
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
-        cancelAnimationFrame(rAf);
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
@@ -239,12 +245,15 @@ function bubbleClick(e) {
             // briefly display msg_wrong
             answerWrong();
         }
+    } else {
+        // remove clicked bubble from container
+        console.log(e.target, `clicked`);
+        gblS.container.removeChild(e.target);
     }
     // if clicks is above zero then set to zero else add 1
     // will always be either one or zero
     gblS.clicks = gblS.clicks > 0 ? 0 : +1;
-    // remove clicked bubble from container
-    gblS.container.removeChild(e.target);
+
 }
 
 
@@ -291,17 +300,23 @@ function checkResult() {
 
 /**
  * stop bubble creation after chosen time limit
+ * 
+ * @returns ID of setTimeout called for time limit
  */
 function startTimeLimit() {
     // plus one used to ensure timer does not stop early
-    setTimeout(function () {
+    console.log(`Time limit ${gblS.timeLimit}s started`);
+    return setTimeout(function () {
+        console.log('TIMEOUT');
         cancelAnimationFrame(rAf);
+        gblS.container.replaceChildren();
     }, ((gblS.timeLimit + 1) * 1000));
 }
 
 
 
 function newQuestion() {
+    console.log('new question started');
     // populate the target number div with a new generated number
     document.getElementById('target_result').textContent = generateNumber(gblS.maxNum);
 
@@ -315,8 +330,13 @@ function newQuestion() {
     // call initial bubble creation for this question
     bubbleDrop();
 
+    // clear the current timeout if there is one
+    if (timeoutId) {
+        console.log(`clearing timeout ${timeoutId}`);
+        clearTimeout(timeoutId);
+    }
     // begin the countdown for the question
-    startTimeLimit();
+    timeoutId = startTimeLimit();
 }
 
 
@@ -326,10 +346,13 @@ function answerCorrect() {
     msg.style.display = 'flex';
     cancelAnimationFrame(rAf);
     gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
+    gblS.container.replaceChildren();
 
-    setTimeout(() => { msg.style.display = 'none' }, 1000, msg);
+    setTimeout(() => {
+        msg.style.display = 'none'
+        newQuestion();
+    }, 1000, msg);
 
-    // generate new question
 }
 
 
