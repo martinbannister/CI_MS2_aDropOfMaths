@@ -10,6 +10,8 @@ let startTime = null;
 let rAf;
 let intCountdown = null;
 let timeoutId = null;
+// total number of questions
+let intQuestions = 0;
 
 
 /**
@@ -141,6 +143,8 @@ function startGame(objSettings) {
 
     // set countdown timer to starting/maximum value
     gblS.countdown.textContent = gblS.timeLimit;
+
+    intQuestions++;
 
     // call bubble creation function for the first time
     bubbleDrop();
@@ -318,6 +322,7 @@ function startTimeLimit() {
 
 function newQuestion() {
     console.log('new question started');
+    intQuestions++;
     // populate the target number div with a new generated number
     document.getElementById('target_result').textContent = generateNumber(gblS.maxNum);
 
@@ -343,17 +348,26 @@ function newQuestion() {
 
 
 function answerCorrect() {
-    let msg = document.getElementById('msg_correct');
-    msg.style.display = 'flex';
-    cancelAnimationFrame(rAf);
-    gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
-    gblS.container.replaceChildren();
+    if (intQuestions === gblS.max_qs) {
+        // you won
+        let msg = document.getElementById('msg_win');
+        msg.style.display = 'flex';
+        cancelAnimationFrame(rAf);
+        gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
+        gblS.container.replaceChildren();
+        clearTimeout(timeoutId);
+    } else {
+        let msg = document.getElementById('msg_correct');
+        msg.style.display = 'flex';
+        cancelAnimationFrame(rAf);
+        gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
+        gblS.container.replaceChildren();
 
-    setTimeout(() => {
-        msg.style.display = 'none'
-        newQuestion();
-    }, 1000, msg);
-
+        setTimeout(() => {
+            msg.style.display = 'none'
+            newQuestion();
+        }, 1000, msg);
+    }
 }
 
 
