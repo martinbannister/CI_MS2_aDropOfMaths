@@ -298,6 +298,7 @@ function answerCorrect() {
     let msg = document.getElementById('msg_correct');
     msg.style.display = 'flex';
     cancelAnimationFrame(rAf);
+    gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
 
     setTimeout(() => { msg.style.display = 'none' }, 1000, msg);
 
