@@ -294,6 +294,23 @@ function checkResult() {
 
 
 
+function newQuestion() {
+    // populate the target number div with a new generated number
+    document.getElementById('target_result').textContent = generateNumber(gblS.maxNum);
+
+    // set countdown timer to starting/maximum value
+    gblS.countdown.textContent = gblS.timeLimit;
+
+    // reset intCountdown and startTime
+    intCountdown = null;
+    startTime = null;
+
+    // call bubble creation function for the first time
+    bubbleDrop();
+}
+
+
+
 function answerCorrect() {
     let msg = document.getElementById('msg_correct');
     msg.style.display = 'flex';
