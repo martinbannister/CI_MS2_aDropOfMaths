@@ -145,11 +145,7 @@ function startGame(objSettings) {
     bubbleDrop();
 
     // stop bubble creation after time limit
-    // plus one used to ensure timer does not stop early
-    setTimeout(function () {
-        cancelAnimationFrame(rAf);
-        // document.getElementById('countdown').textContent = 'done';
-    }, ((gblS.timeLimit + 1) * 1000));
+    startTimeLimit();
 
 }
 
@@ -293,6 +289,17 @@ function checkResult() {
 }
 
 
+/**
+ * stop bubble creation after chosen time limit
+ */
+function startTimeLimit() {
+    // plus one used to ensure timer does not stop early
+    setTimeout(function () {
+        cancelAnimationFrame(rAf);
+    }, ((gblS.timeLimit + 1) * 1000));
+}
+
+
 
 function newQuestion() {
     // populate the target number div with a new generated number
@@ -305,8 +312,11 @@ function newQuestion() {
     intCountdown = null;
     startTime = null;
 
-    // call bubble creation function for the first time
+    // call initial bubble creation for this question
     bubbleDrop();
+
+    // begin the countdown for the question
+    startTimeLimit();
 }
 
 
