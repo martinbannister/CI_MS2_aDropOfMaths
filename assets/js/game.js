@@ -12,6 +12,9 @@ let intCountdown = null;
 let timeoutId = null;
 // total number of questions
 let intQuestions = 0;
+// backup numbers to ensure questions can be answered
+let backupNum1 = 0;
+let backupNum2 = 0;
 
 
 /**
@@ -119,6 +122,8 @@ function startGame(objSettings) {
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
 
+    generateBackupNos(target_num);
+
     /* store the symbol operator for display based
         on the calcType string */
     switch (gblS.calcType) {
@@ -152,6 +157,34 @@ function startGame(objSettings) {
     // stop bubble creation after time limit
     timeoutId = startTimeLimit();
 
+}
+
+
+
+/**
+ * Generates two numbers and stores them in global variables to be used on bubbles to ensure problems can be solved
+ * 
+ * @param {number} targetNum The target number to generate backup numbers for
+ */
+function generateBackupNos(targetNum) {
+    // generate two numbers to include in bubbles to ensure question can be answered
+    backupNum1 = generateNumber(gblS.maxNum);
+    switch (gblS.calcType) {
+        case 'add':
+            backupNum2 = targetNum - backupNum1;
+            break;
+        case 'subtract':
+            backupNum2 = targetNum + backupNum1;
+            break;
+        case 'multiply':
+            backupNum2 = targetNum / backupNum1;
+            break;
+        case 'divide':
+            backupNum2 = targetNum * backupNum1;
+            break;
+        default:
+            console.log('Generate backup numbers', 'something went wrong');
+    }
 }
 
 
