@@ -182,13 +182,7 @@ function bubbleDrop(timestamp) {
 
     // when the countdown reaches zero remove all bubbles not clicked
     if (intCountdown === 0) {
-        console.log('countdown has ended, sorry');
-        cancelAnimationFrame(rAf);
-        gblS.container.replaceChildren();
-        gblS.operand1.textContent = '';
-        gblS.operand2.textContent = '';
-        let msg = document.getElementById('msg_lose');
-        msg.style.display = 'flex';
+
     }
 
     rAf = requestAnimationFrame(bubbleDrop);
@@ -299,7 +293,7 @@ function checkResult() {
 
 
 /**
- * stop bubble creation after chosen time limit
+ * Stop bubble creation after chosen time limit
  * 
  * @returns ID of setTimeout called for time limit
  */
@@ -307,9 +301,16 @@ function startTimeLimit() {
     // plus one used to ensure timer does not stop early
     console.log(`Time limit ${gblS.timeLimit}s started`);
     return setTimeout(function () {
-        console.log('TIMEOUT');
+        // console.log('TIMEOUT');
+        // cancelAnimationFrame(rAf);
+        // gblS.container.replaceChildren();
+        console.log('countdown has ended, sorry');
         cancelAnimationFrame(rAf);
         gblS.container.replaceChildren();
+        gblS.operand1.textContent = '';
+        gblS.operand2.textContent = '';
+        let msg = document.getElementById('msg_lose');
+        msg.style.display = 'flex';
     }, ((gblS.timeLimit + 1) * 1000));
 }
 
