@@ -162,18 +162,31 @@ form div.col {
     top: 0;
     left: 0;
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 999;
 }
 
 .message {
+    margin: 10px;
     border-radius: 15px;
     width: 60vw;
     max-height: 95vh;
     padding: 10px;
     font-size: 10vw;
     text-align: center;
+}
+
+.score_form {
+    margin: 10px;
+}
+
+.score_form > button {
+    background-color: var(--play_button_bg_colour);
+    color: var(--play_button_text_colour);
+    border-radius: 5px;
+    font-size: 4vh;
 }
 
 .success {
