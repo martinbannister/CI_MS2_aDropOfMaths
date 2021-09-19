@@ -182,6 +182,8 @@ function generateNumbers(maxNum) {
             arrTargetNums.push(Math.floor(Math.random() * (maxNum - 1)));
         }
     }
+
+    console.log(arrTargetNums);
 }
 
 
@@ -220,14 +222,11 @@ function generateBackupNos(targetNum) {
  */
 function bubbleDrop(timestamp) {
 
-    console.log('bubbleDrop started');
     if (!intCountdown) {
-        console.log('intCountdown not set');
         intCountdown = gblS.timeLimit;
     }
 
     if (!startTime) {
-        console.log('startTime not set');
         startTime = timestamp;
     }
 
@@ -236,7 +235,6 @@ function bubbleDrop(timestamp) {
     /* check if 1 or more seconds have passed since
         the last iteration */
     if (currentTime >= 1000) {
-        console.log('1s has passed createBubble');
         createBubble();
         numberIndex++;
         startTime = timestamp;
