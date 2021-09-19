@@ -238,6 +238,7 @@ function bubbleDrop(timestamp) {
     if (currentTime >= 1000) {
         console.log('1s has passed createBubble');
         createBubble();
+        numberIndex++;
         startTime = timestamp;
         gblS.countdown.textContent = --intCountdown;
     }
@@ -263,7 +264,7 @@ function createBubble() {
     gblS.hueOpp = (gblS.hue + 180) % 360;
 
     newBubble.classList.add('bubble');
-    newBubble.textContent = Math.floor(Math.random() * (gblS.maxNum - 1));
+    newBubble.textContent = arrTargetNums[numberIndex];
     newBubble.style.left = (position + size) > gblS.CONTAINER_WIDTH ? `${position - size}px` : `${position}px`;
     newBubble.style.width = `${size}px`;
     newBubble.style.height = `${size}px`;
@@ -382,14 +383,20 @@ function newQuestion() {
     console.log('new question started');
     intQuestions++;
     // populate the target number div with a new generated number
-    document.getElementById('target_result').textContent = generateNumber(gblS.maxNum);
+    let target_num = generateNumber(gblS.maxNum);
+    document.getElementById('target_result').textContent = target_num;
+
+    // generate backup numbers and new bubble numbers
+    generateBackupNos(target_num);
+    generateNumbers(gblS.maxNum);
 
     // set countdown timer to starting/maximum value
     gblS.countdown.textContent = gblS.timeLimit;
 
-    // reset intCountdown and startTime
+    // reset intCountdown, startTime and numberIndex
     intCountdown = null;
     startTime = null;
+    numberIndex = 0;
 
     // call initial bubble creation for this question
     bubbleDrop();
