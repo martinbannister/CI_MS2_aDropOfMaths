@@ -377,6 +377,8 @@ function startTimeLimit() {
         gblS.operand2.textContent = '';
         // clear the array of random numbers
         arrBubbleNums.length = 0;
+        // reset the number of questions answered
+        intQuestions = 0;
         // display lose message
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
