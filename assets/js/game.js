@@ -531,4 +531,10 @@ let msgLose = document.getElementById('msg_lose');
 msgLose.addEventListener('click', () => {
     document.getElementById('msg_lose').style.display = 'none';
     document.getElementById('overlay_div').style.display = 'flex';
+});
+
+// add click event listener to save high score buttons
+let save_buttons = document.querySelectorAll('.score_form > button');
+save_buttons.forEach(elem => {
+    elem.addEventListener('click', saveToHighscore);
 })
