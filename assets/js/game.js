@@ -15,6 +15,8 @@ let intQuestions = 0;
 // backup numbers to ensure questions can be answered
 let backupNum1 = 0;
 let backupNum2 = 0;
+let arrTargetNums = [];
+let numberIndex = 0;
 
 
 /**
@@ -123,6 +125,7 @@ function startGame(objSettings) {
     document.getElementById('target_result').textContent = target_num;
 
     generateBackupNos(target_num);
+    generateNumbers(gbls.maxNum);
 
     /* store the symbol operator for display based
         on the calcType string */
@@ -157,6 +160,28 @@ function startGame(objSettings) {
     // stop bubble creation after time limit
     timeoutId = startTimeLimit();
 
+}
+
+
+
+/**
+ * Generates random numbers and pushes them into an array
+ * Inserts backup numbers into random positions in the array
+ * @param {number} maxNum The maximum target number for the questions
+ */
+function generateNumbers(maxNum) {
+    let indexNo1 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+    let indexNo2 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+
+    for (let i = 0; i < gblS.qs; i++) {
+        if (i === indexNo1) {
+            arrTargetNums.push(backupNum1);
+        } else if (i === indexNo2) {
+            arrTargetNums.push(backupNum2);
+        } else {
+            arrTargetNums.push(Math.floor(Math.random() * (maxNum - 1)));
+        }
+    }
 }
 
 
