@@ -212,6 +212,8 @@ function generateBackupNos(targetNum) {
         default:
             console.log('Generate backup numbers', 'something went wrong');
     }
+
+    console.log(backupNum1, backupNum2);
 }
 
 
@@ -362,14 +364,16 @@ function startTimeLimit() {
     // plus one used to ensure timer does not stop early
     console.log(`Time limit ${gblS.timeLimit}s started`);
     return setTimeout(function () {
-        // console.log('TIMEOUT');
-        // cancelAnimationFrame(rAf);
-        // gblS.container.replaceChildren();
         console.log('countdown has ended, sorry');
         cancelAnimationFrame(rAf);
+        // remove any remaining bubbles from container div
         gblS.container.replaceChildren();
+        // clear the contents of both operands
         gblS.operand1.textContent = '';
         gblS.operand2.textContent = '';
+        // clear the array of random numbers
+        arrTargetNums.length = 0;
+        // display lose message
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
     }, ((gblS.timeLimit + 1) * 1000));
@@ -412,25 +416,37 @@ function newQuestion() {
 
 function answerCorrect() {
     if (intQuestions === gblS.max_qs) {
-        // you won
+        // display win message
         let msg = document.getElementById('msg_win');
         msg.style.display = 'flex';
+
         cancelAnimationFrame(rAf);
+        // increment score
         gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
+        // clear any remaining bubbles from container div
         gblS.container.replaceChildren();
+        // clear the time limit timeout to prevent lose message
         clearTimeout(timeoutId);
     } else {
+        // display correct message
         let msg = document.getElementById('msg_correct');
         msg.style.display = 'flex';
+
         cancelAnimationFrame(rAf);
+        // increment score
         gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
+        // clear any remaining bubbles from container div
         gblS.container.replaceChildren();
 
+        // hide correct message after 1 second
         setTimeout(() => {
             msg.style.display = 'none'
             newQuestion();
         }, 1000, msg);
     }
+
+    // empty out random numbers array
+    arrTargetNums.length = 0;
 }
 
 
