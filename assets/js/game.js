@@ -422,6 +422,8 @@ function newQuestion() {
 
 function answerCorrect() {
     if (intQuestions === gblS.max_qs) {
+        // clear the time limit timeout to prevent lose message
+        clearTimeout(timeoutId);
         // display win message
         let msg = document.getElementById('msg_win');
         msg.style.display = 'flex';
@@ -431,9 +433,9 @@ function answerCorrect() {
         gblS.score.textContent = parseInt(gblS.score.textContent) + 1;
         // clear any remaining bubbles from container div
         gblS.container.replaceChildren();
+    } else {
         // clear the time limit timeout to prevent lose message
         clearTimeout(timeoutId);
-    } else {
         // display correct message
         let msg = document.getElementById('msg_correct');
         msg.style.display = 'flex';
