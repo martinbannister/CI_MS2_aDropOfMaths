@@ -134,7 +134,7 @@ form div.col {
     max-width: 49%;
 }
 
-input[type='text'] {
+.settings_input {
     width: 80%;
     margin-left: 10px;
     font-size: 2vh;
@@ -168,7 +168,6 @@ input[type='text'] {
 }
 
 .message {
-    margin: auto;
     border-radius: 15px;
     width: 60vw;
     max-height: 95vh;
