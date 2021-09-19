@@ -10,12 +10,15 @@ let startTime = null;
 let rAf;
 let intCountdown = null;
 let timeoutId = null;
-// total number of questions
+// total number of questions answered
 let intQuestions = 0;
 // backup numbers to ensure questions can be answered
 let backupNum1 = 0;
 let backupNum2 = 0;
+// array to hold numbers for the bubbles
 let arrBubbleNums = [];
+/* next index of the array of bubble numbers to apply
+    the number form the array to a bubble */
 let numberIndex = 0;
 
 
