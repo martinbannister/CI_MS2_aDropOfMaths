@@ -1,4 +1,3 @@
-
 //  declare an object to hold settings used throughout functions (global (gbl) Settings (S))
 const gblS = {
     calcType: '',
@@ -129,14 +128,6 @@ function startGame(objSettings) {
     // get constants for container area to user for bubble positions
     gblS.CONTAINER_HEIGHT = parseInt(getComputedStyle(gblS.container).getPropertyValue('height'));
     gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
-
-    // hue for colouring bubbles in child theme
-    gblS.hue = 0;
-    // opposite of hue for contrasting text colour
-    gblS.hueOpp = 0;
-
-    // 'clicks' used to count the number of clicks to determine which operand div to fill
-    gblS.clicks = 0;
 
     // target number for the current question
     let target_num = generateNumber(gblS.maxNum);
