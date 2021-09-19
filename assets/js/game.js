@@ -72,6 +72,9 @@ function playClick(e) {
     // hide/remove the style overlay
     document.getElementById('overlay_div').style.display = 'none';
 
+    // log gblS
+    console.log(gblS);
+
     startGame(objSettings);
 }
 
@@ -387,10 +390,16 @@ function startTimeLimit() {
         // clear the contents of both operands
         gblS.operand1.textContent = '';
         gblS.operand2.textContent = '';
+        // clear timer value
+        gblS.countdown.textContent = 0;
+        // clear target number
+        document.getElementById('target_result').textContent = 0;
         // clear the array of random numbers
         arrBubbleNums.length = 0;
         // reset the number of questions answered
         intQuestions = 0;
+        // log the current state of gblS
+        console.log(gblS);
         // display lose message
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
