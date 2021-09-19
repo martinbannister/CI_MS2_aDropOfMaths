@@ -1,6 +1,23 @@
 
-//  declare an empty object to hold settings used throughout functions (global (gbl) Settings (S))
-const gblS = {};
+//  declare an object to hold settings used throughout functions (global (gbl) Settings (S))
+const gblS = {
+    calcType: '',
+    maxNum: 0,
+    speed: 0,
+    timeLimit: 0,
+    qs: 0,
+    container: '',
+    countdown: '',
+    score: '',
+    operand1: '',
+    operand2: '',
+    operator: '',
+    CONTAINER_HEIGHT: 0,
+    CONTAINER_WIDTH: 0,
+    hue: 0,
+    hueOpp: 0,
+    clicks: 0,
+};
 
 // global variables required by bubbleDrop()
 /* declared globally otherwise they'd be
@@ -240,7 +257,7 @@ function bubbleDrop(timestamp) {
 
     /* check if 1 or more seconds have passed since
         the last iteration */
-    if (currentTime >= 1000) {
+    if (currentTime >= 750) {
         createBubble();
         numberIndex++;
         startTime = timestamp;
@@ -421,7 +438,7 @@ function newQuestion() {
 
 
 function answerCorrect() {
-    if (intQuestions === gblS.max_qs) {
+    if (intQuestions === gblS.qs) {
         // clear the time limit timeout to prevent lose message
         clearTimeout(timeoutId);
         // display win message
