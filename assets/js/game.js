@@ -125,7 +125,7 @@ function startGame(objSettings) {
     document.getElementById('target_result').textContent = target_num;
 
     generateBackupNos(target_num);
-    generateNumbers(gbls.maxNum);
+    generateNumbers(gblS.maxNum);
 
     /* store the symbol operator for display based
         on the calcType string */
