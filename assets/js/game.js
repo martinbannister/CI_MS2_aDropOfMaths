@@ -195,11 +195,13 @@ function generateNumbers(maxNum) {
 
     console.log('index1:', indexNo1, 'index2:', indexNo2);
 
-    /* loop enough times to match the time limit
+    // calculate the number of numbers required
+    let numOfNums = Math.floor(gblS.timeLimit / 0.75);
+    /* loop for the number of times required
         adding numbers to the array each iteration
         insert the backup numbers into random 
         positions in the array */
-    for (let i = 0; i < gblS.timeLimit; i++) {
+    for (let i = 0; i < numOfNums; i++) {
         if (i === indexNo1) {
             arrBubbleNums.push(backupNum1);
         } else if (i === indexNo2) {
