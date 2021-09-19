@@ -186,7 +186,7 @@ form div.col {
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
     border-radius: 5px;
-    font-size: 4vh;
+    font-size: 2vh;
 }
 
 .success {
