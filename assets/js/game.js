@@ -15,7 +15,7 @@ let intQuestions = 0;
 // backup numbers to ensure questions can be answered
 let backupNum1 = 0;
 let backupNum2 = 0;
-let arrTargetNums = [];
+let arrBubbleNums = [];
 let numberIndex = 0;
 
 
@@ -175,15 +175,15 @@ function generateNumbers(maxNum) {
 
     for (let i = 0; i < gblS.qs; i++) {
         if (i === indexNo1) {
-            arrTargetNums.push(backupNum1);
+            arrBubbleNums.push(backupNum1);
         } else if (i === indexNo2) {
-            arrTargetNums.push(backupNum2);
+            arrBubbleNums.push(backupNum2);
         } else {
-            arrTargetNums.push(Math.floor(Math.random() * (maxNum - 1)));
+            arrBubbleNums.push(Math.floor(Math.random() * (maxNum - 1)));
         }
     }
 
-    console.log(arrTargetNums);
+    console.log(arrBubbleNums);
 }
 
 
@@ -264,7 +264,7 @@ function createBubble() {
     gblS.hueOpp = (gblS.hue + 180) % 360;
 
     newBubble.classList.add('bubble');
-    newBubble.textContent = arrTargetNums[numberIndex];
+    newBubble.textContent = arrBubbleNums[numberIndex];
     newBubble.style.left = (position + size) > gblS.CONTAINER_WIDTH ? `${position - size}px` : `${position}px`;
     newBubble.style.width = `${size}px`;
     newBubble.style.height = `${size}px`;
@@ -372,7 +372,7 @@ function startTimeLimit() {
         gblS.operand1.textContent = '';
         gblS.operand2.textContent = '';
         // clear the array of random numbers
-        arrTargetNums.length = 0;
+        arrBubbleNums.length = 0;
         // display lose message
         let msg = document.getElementById('msg_lose');
         msg.style.display = 'flex';
@@ -446,7 +446,7 @@ function answerCorrect() {
     }
 
     // empty out random numbers array
-    arrTargetNums.length = 0;
+    arrBubbleNums.length = 0;
 }
 
 
