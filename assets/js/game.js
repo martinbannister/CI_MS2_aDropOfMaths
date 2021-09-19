@@ -188,8 +188,17 @@ function startGame(objSettings) {
 function generateNumbers(maxNum) {
     let indexNo1 = Math.floor(Math.random() * (gblS.timeLimit - 1));
     let indexNo2 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+    // check if index 1 and 2 are equal, increment index 2 if true
+    if (indexNo1 === indexNo2) {
+        indexNo2++;
+    }
+
     console.log('index1:', indexNo1, 'index2:', indexNo2);
 
+    /* loop enough times to match the time limit
+        adding numbers to the array each iteration
+        insert the backup numbers into random 
+        positions in the array */
     for (let i = 0; i < gblS.timeLimit; i++) {
         if (i === indexNo1) {
             arrBubbleNums.push(backupNum1);
@@ -396,8 +405,11 @@ function startTimeLimit() {
         document.getElementById('target_result').textContent = 0;
         // clear the array of random numbers
         arrBubbleNums.length = 0;
-        // reset the number of questions answered
+        // reset intQuestions, intCountdown, numberIndex and startTime
         intQuestions = 0;
+        intCountdown = null;
+        numberIndex = 0;
+        startTime = null;
         // log the current state of gblS
         console.log(gblS);
         // display lose message
