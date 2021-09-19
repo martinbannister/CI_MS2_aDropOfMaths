@@ -170,10 +170,11 @@ function startGame(objSettings) {
  * @param {number} maxNum The maximum target number for the questions
  */
 function generateNumbers(maxNum) {
-    let indexNo1 = Math.floor(Math.random() * (gblS.qs - 1));
-    let indexNo2 = Math.floor(Math.random() * (gblS.qs - 1));
+    let indexNo1 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+    let indexNo2 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+    console.log('index1:', indexNo1, 'index2:', indexNo2);
 
-    for (let i = 0; i < gblS.qs; i++) {
+    for (let i = 0; i < gblS.timeLimit; i++) {
         if (i === indexNo1) {
             arrBubbleNums.push(backupNum1);
         } else if (i === indexNo2) {
@@ -213,7 +214,7 @@ function generateBackupNos(targetNum) {
             console.log('Generate backup numbers', 'something went wrong');
     }
 
-    console.log(backupNum1, backupNum2);
+    console.log('backup1:', backupNum1, 'backup2:', backupNum2);
 }
 
 
