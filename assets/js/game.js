@@ -1,5 +1,6 @@
 //  declare an object to hold settings used throughout functions (global (gbl) Settings (S))
 const gblS = {
+    gameStyle: '',
     calcType: '',
     maxNum: 0,
     speed: 0,
@@ -110,6 +111,7 @@ function generateNumber(maxNumber) {
  */
 function startGame(objSettings) {
     // constant values determined by chosen user settings
+    gblS.gameStyle = objSettings.gameStyle;
     gblS.calcType = objSettings.calcType;
     gblS.maxNum = parseInt(objSettings.maxNumber);
     gblS.speed = parseInt(objSettings.speed);
@@ -281,8 +283,10 @@ function createBubble() {
     newBubble.style.width = `${size}px`;
     newBubble.style.height = `${size}px`;
     newBubble.style.top = 0 - `${size}px`;
-    newBubble.style.backgroundColor = `hsl(${gblS.hue}, 100%, 50%)`;
-    newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
+    if (gblS.gameStyle === 'child') {
+        newBubble.style.backgroundColor = `hsl(${gblS.hue}, 100%, 50%)`;
+        newBubble.style.color = `hsl(${gblS.hueOpp}, 100%, 50%)`;
+    }
     newBubble.addEventListener('click', bubbleClick);
     // add event listener to remove bubble from DOM when animation ends
     newBubble.addEventListener('animationend', () => gblS.container.removeChild(newBubble));
