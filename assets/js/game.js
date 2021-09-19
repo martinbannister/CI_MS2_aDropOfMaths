@@ -170,8 +170,8 @@ function startGame(objSettings) {
  * @param {number} maxNum The maximum target number for the questions
  */
 function generateNumbers(maxNum) {
-    let indexNo1 = Math.floor(Math.random() * (gblS.timeLimit - 1));
-    let indexNo2 = Math.floor(Math.random() * (gblS.timeLimit - 1));
+    let indexNo1 = Math.floor(Math.random() * (gblS.qs - 1));
+    let indexNo2 = Math.floor(Math.random() * (gblS.qs - 1));
 
     for (let i = 0; i < gblS.qs; i++) {
         if (i === indexNo1) {
