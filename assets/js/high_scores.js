@@ -5,39 +5,27 @@ function saveToHighscore() {
 }
 
 function makeApiCall() {
-    var params = {
-      // The ID of the spreadsheet to update.
-      spreadsheetId: '1UQPFk1pgxJHESHmhj505eYeq2ec_4I5uoi65IVahiRs',
+    try {
+        let initals = 'MB';
 
-      // The A1 notation of a range to search for a logical table of data.
-      // Values will be appended after the last row of the table.
-      range: 'A1', 
+        let dataToSend = {
+            'data': {
+                'initials': initals,
+                'score': 100
+            }
+        };
 
-      // How the input data should be interpreted.
-      valueInputOption: 'RAW', 
+        SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
+            console.log(result);
+            }, function(error){
+            console.log(error);
+        });
+    }
 
-      // How the input data should be inserted.
-      insertDataOption: 'INSERT_ROWS', 
-    };
-
-    var valueRangeBody = {
-        "range": "A1:B1000",
-        "values": [
-          [
-            "CAT",
-            12
-          ]
-        ]
-    };
-
-    var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
-    request.then(function(response) {
-      // TODO: Change code below to process the `response` object:
-      console.log(response.result);
-    }, function(reason) {
-      console.error('error: ' + reason.result.error.message);
-    });
-  }
+    catch(err) {
+        console.log(err);
+    }
+}
 
 function start() {
     // 2. Initialize the JavaScript client library.
