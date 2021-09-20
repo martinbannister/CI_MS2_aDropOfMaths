@@ -157,7 +157,7 @@ form div.col {
 .transp_overlay {
     width: 100%;
     height: 100vh;
-    background-color: transparent;
+    background-color: hsla(0, 0%, 50%, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -171,22 +171,32 @@ form div.col {
 .message {
     margin: 10px;
     border-radius: 15px;
-    width: 60vw;
+    max-width: 800px;
     max-height: 95vh;
     padding: 10px;
-    font-size: 10vw;
+    font-size: 6vh;
     text-align: center;
 }
 
 .score_form {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
     margin: 10px;
+    font-size: 3vh;
+    max-width: 780px;
 }
 
 .score_form > button {
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
     border-radius: 5px;
-    font-size: 2vh;
+    font-size: 3vh;
+}
+
+.score_form > input {
+    font-size: 3vh;
+    border-radius: 30px;
 }
 
 .success {
