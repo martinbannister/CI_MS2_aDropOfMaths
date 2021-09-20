@@ -528,7 +528,7 @@ divOverlay.addEventListener('click', (e) => {
 
 // add click event listener to msg_lose div to restart the game
 let msgLose = document.getElementById('msg_lose');
-msgLose.addEventListener('click', () => {
+msgLose.addEventListener('click', (e) => {
     if (e.target.id === 'msg_lose') {
         document.getElementById('msg_lose').style.display = 'none';
         document.getElementById('overlay_div').style.display = 'flex';
