@@ -11,6 +11,46 @@
 <body>
 
     <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        /**
+         * Sample JavaScript code for sheets.spreadsheets.values.get
+         * See instructions for running APIs Explorer code samples locally:
+         * https://developers.google.com/explorer-help/guides/code_samples#javascript
+         */
+
+        function authenticate() {
+            return gapi.auth2.getAuthInstance()
+                .signIn({ scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly" })
+                .then(function () { console.log("Sign-in successful"); },
+                    function (err) { console.error("Error signing in", err); });
+        }
+        function loadClient() {
+            gapi.client.setApiKey("AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY");
+            return gapi.client.load("https://sheets.googleapis.com/$discovery/rest?version=v4")
+                .then(function () { console.log("GAPI client loaded for API"); },
+                    function (err) { console.error("Error loading GAPI client for API", err); });
+        }
+        // Make sure the client is loaded and sign-in is complete before calling this method.
+        function execute() {
+            return gapi.client.sheets.spreadsheets.values.get({
+                "spreadsheetId": "1UQPFk1pgxJHESHmhj505eYeq2ec_4I5uoi65IVahiRs",
+                "range": "A1:B4",
+                "access_token": "AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY"
+            })
+                .then(function (response) {
+                    // Handle the results here (response.result has the parsed body).
+                    console.log("Response", response);
+                },
+                    function (err) { console.error("Execute error", err); });
+        }
+        gapi.load("client:auth2", function () {
+            gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
+        });
+    </script>
+    <button onclick="loadClient()">authorize and load</button>
+    <button onclick="execute()">execute</button>
+
+
     <script src="assets/js/high_scores.js"></script>
 </body>
 
