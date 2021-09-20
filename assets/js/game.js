@@ -502,6 +502,25 @@ function answerWrong() {
     setTimeout(() => { msg.style.display = 'none' }, 500, msg);
 }
 
+function saveToHighscore(frm) {
+    frm.preventDefault();
+    console.log('form id', frm.id); 
+    let initals = frm.id === 'win_save_score' ? frm.win_initals.value : frm.lose_initials.value;
+
+    let dataToSend = {
+        'data': {
+            'initials': initals,
+            'score': intQuestions
+        }
+    };
+
+    SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
+        console.log(result);
+        }, function(error){
+        console.log(error);
+    });
+}
+
 
 /* ------------------ EVENT HANDLERS ------------------ */
 
@@ -535,8 +554,17 @@ msgLose.addEventListener('click', (e) => {
     }
 });
 
+// add click event listener to msg_win div to restart the game
+let msgWin = document.getElementById('msg_win');
+msgWin.addEventListener('click', (e) => {
+    if (e.target.id === 'msg_win') {
+        document.getElementById('msg_win').style.display = 'none';
+        document.getElementById('overlay_div').style.display = 'flex';
+    }
+});
+
 // add click event listener to save high score buttons
-let save_buttons = document.querySelectorAll('.score_form > button');
-save_buttons.forEach(elem => {
-    elem.addEventListener('click', saveToHighscore);
-})
+// let save_buttons = document.querySelectorAll('.score_form > button');
+// save_buttons.forEach(elem => {
+//     elem.addEventListener('click', saveToHighscore);
+// })
