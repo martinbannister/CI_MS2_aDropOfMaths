@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&family=Short+Stack&family=Press+Start+2P&display=swap');
 
 /* REFERENCE: Using CSS custom properties to
     create changable theme
@@ -362,13 +362,24 @@ form div.col {
 /* HIGH_SCORES.html ---------------------------------------------- */
 
 .container {
-    background-color: #fff;
-    position: absolute;
+    background-color: hsl(0, 0%, 13%);
+    position: relative;
     top: 10vh;
     max-width: 800px;
     height: 70vh;
     width: 100%;
     z-index: 1;
+    font-family: 'Press Start 2p', 'Courier New', Courier, monospace;
+}
+
+#high_scores {
+    margin: 20px auto;
+    padding: 10px;
+    color: #fff;
+}
+
+#high_scores th, td {
+    padding: 10px;
 }
 
 /* / HIGH_SCORES.html -------------------------------------------- */
