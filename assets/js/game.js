@@ -529,8 +529,10 @@ divOverlay.addEventListener('click', (e) => {
 // add click event listener to msg_lose div to restart the game
 let msgLose = document.getElementById('msg_lose');
 msgLose.addEventListener('click', () => {
-    document.getElementById('msg_lose').style.display = 'none';
-    document.getElementById('overlay_div').style.display = 'flex';
+    if (e.target.id === 'msg_lose') {
+        document.getElementById('msg_lose').style.display = 'none';
+        document.getElementById('overlay_div').style.display = 'flex';
+    }
 });
 
 // add click event listener to save high score buttons
