@@ -27,7 +27,6 @@
                 <!-- Dynamically generated content from spreadsheet will go here -->
             </tbody>
         </table>
-        <button onclick="getScores()">execute</button>
     </section>
 
     <footer>
@@ -60,7 +59,10 @@
         function loadClient() {
             gapi.client.setApiKey("AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY");
             return gapi.client.load("https://sheets.googleapis.com/$discovery/rest?version=v4")
-                .then(function () { console.log("GAPI client loaded for API"); },
+                .then(function () {
+                    console.log("GAPI client loaded for API");
+                    getScores();
+                },
                     function (err) { console.error("Error loading GAPI client for API", err); });
         }
         // Make sure the client is loaded and sign-in is complete before calling this method.
@@ -90,6 +92,9 @@
             let arrScores = data.values;
 
             arrScores.forEach(r => {
+                if (r[0] === 'initials') {
+                    return;
+                }
                 let row = document.createElement('tr');
                 let col1 = document.createElement('td');
                 let col2 = document.createElement('td');
