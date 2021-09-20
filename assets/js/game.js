@@ -503,22 +503,28 @@ function answerWrong() {
 }
 
 function saveToHighscore(frm) {
-    frm.preventDefault();
-    console.log('form id', frm.id); 
-    let initals = frm.id === 'win_save_score' ? frm.win_initals.value : frm.lose_initials.value;
+    try {
+        frm.preventDefault();
+        console.log('form id', frm.id); 
+        let initals = frm.id === 'win_save_score' ? frm.win_initals.value : frm.lose_initials.value;
 
-    let dataToSend = {
-        'data': {
-            'initials': initals,
-            'score': intQuestions
-        }
-    };
+        let dataToSend = {
+            'data': {
+                'initials': initals,
+                'score': intQuestions
+            }
+        };
 
-    SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
-        console.log(result);
-        }, function(error){
-        console.log(error);
-    });
+        SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
+            console.log(result);
+            }, function(error){
+            console.log(error);
+        });
+    }
+
+    catch(err) {
+        console.log(err);
+    }
 }
 
 
