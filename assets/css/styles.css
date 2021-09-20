@@ -191,7 +191,7 @@ form div.col {
     max-width: 780px;
 }
 
-.score_form > button {
+.score_save {
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
     border-radius: 5px;
