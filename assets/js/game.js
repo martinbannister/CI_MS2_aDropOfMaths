@@ -502,9 +502,9 @@ function answerWrong() {
     setTimeout(() => { msg.style.display = 'none' }, 500, msg);
 }
 
-function saveToHighscore(frm) {
+function saveToHighscore(e) {
     try {
-        frm.preventDefault();
+        let frm = e.target.parentNode;
         console.log('form id', frm.id); 
         let initals = frm.id === 'win_save_score' ? frm.win_initals.value : frm.lose_initials.value;
 
@@ -570,7 +570,7 @@ msgWin.addEventListener('click', (e) => {
 });
 
 // add click event listener to save high score buttons
-// let save_buttons = document.querySelectorAll('.score_form > button');
-// save_buttons.forEach(elem => {
-//     elem.addEventListener('click', saveToHighscore);
-// })
+let save_buttons = document.querySelectorAll('.score_form > button');
+save_buttons.forEach(elem => {
+    elem.addEventListener('click', saveToHighscore);
+})
