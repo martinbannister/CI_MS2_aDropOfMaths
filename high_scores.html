@@ -90,12 +90,16 @@
         function buildTable(data) {
             let tblScores = document.querySelector('#high_scores > tbody');
             let arrScores = data.values;
+            let rowHue = 0;
 
             arrScores.forEach(r => {
                 if (r[0] === 'initials') {
                     return;
                 }
                 let row = document.createElement('tr');
+
+                row.style.color = `hsl(${rowHue}, 100%, 50%)`;
+
                 let col1 = document.createElement('td');
                 let col2 = document.createElement('td');
 
@@ -105,6 +109,7 @@
                 row.append(col1, col2);
 
                 tblScores.appendChild(row);
+                rowHue += 40;
             });
 
         }
