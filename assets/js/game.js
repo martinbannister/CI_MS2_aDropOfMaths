@@ -576,7 +576,7 @@ msgWin.addEventListener('click', (e) => {
 });
 
 // add click event listener to save high score buttons
-let save_buttons = document.querySelectorAll('.score_form > button');
+let save_buttons = document.querySelectorAll('.score_save');
 save_buttons.forEach(elem => {
     elem.addEventListener('click', saveToHighscore);
 })
