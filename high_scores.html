@@ -13,11 +13,22 @@
 <body>
 
     <header>
-
+        <button onclick="loadClient()">authorize and load</button>
+        <button onclick="getScores()">execute</button>
     </header>
 
-    <section>
-
+    <section class="container">
+        <table id="high_scores">
+            <thead>
+                <tr>
+                    <th>Initials</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamically generated content from spreadsheet will go here -->
+            </tbody>
+        </table>
     </section>
 
     <footer>
@@ -32,10 +43,13 @@
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
-        /**
-         * Sample JavaScript code for sheets.spreadsheets.values.get
-         * See instructions for running APIs Explorer code samples locally:
-         * https://developers.google.com/explorer-help/guides/code_samples#javascript
+        /*
+         REFERENCE: This code is derived from the sample code generated at
+         developers.google.com and can be located here:
+         https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get?apix_params=%7B%22spreadsheetId%22%3A%221UQPFk1pgxJHESHmhj505eYeq2ec_4I5uoi65IVahiRs%22%2C%22range%22%3A%22A1%3AB4%22%2C%22access_token%22%3A%22AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY%22%7D
+
+         Initialisation for the API was taken from here:
+         https://github.com/google/google-api-javascript-client/blob/master/docs/start.md
          */
 
         function authenticate() {
@@ -51,24 +65,47 @@
                     function (err) { console.error("Error loading GAPI client for API", err); });
         }
         // Make sure the client is loaded and sign-in is complete before calling this method.
-        function execute() {
+        function getScores() {
             return gapi.client.sheets.spreadsheets.values.get({
                 "spreadsheetId": "1UQPFk1pgxJHESHmhj505eYeq2ec_4I5uoi65IVahiRs",
-                "range": "A1:B4",
+                "range": "A1:B1000",
                 "access_token": "AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY"
             })
                 .then(function (response) {
                     // Handle the results here (response.result has the parsed body).
                     console.log("Response", response);
+                    buildTable(response.result);
                 },
                     function (err) { console.error("Execute error", err); });
         }
-        gapi.load("client:auth2", function () {
-            gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
+
+        gapi.load('client', function () {
+            gapi.client.init({
+                'apiKey': 'AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY'
+            })
+                .then(loadClient());
         });
+
+        function buildTable(data) {
+            let tblScores = document.querySelector('#high_scores > tbody');
+            let arrScores = data.values;
+
+            arrScores.forEach(r => {
+                let row = document.createElement('tr');
+                let col1 = document.createElement('td');
+                let col2 = document.createElement('td');
+
+                col1.textContent = r[0];
+                col2.textContent = r[1];
+
+                row.append(col1, col2);
+
+                tblScores.appendChild(row);
+            });
+
+        }
+
     </script>
-    <button onclick="loadClient()">authorize and load</button>
-    <button onclick="execute()">execute</button>
 
 
     <script src="assets/js/high_scores.js"></script>
