@@ -364,11 +364,9 @@ form div.col {
 .container {
     background-color: hsl(0, 0%, 13%);
     position: relative;
-    top: 10vh;
     max-width: 800px;
-    height: 70vh;
+    height: 90vh;
     width: 100%;
-    z-index: 1;
     font-family: 'Press Start 2p', 'Courier New', Courier, monospace;
 }
 
