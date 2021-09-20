@@ -365,7 +365,7 @@ form div.col {
     background-color: hsl(0, 0%, 13%);
     position: relative;
     max-width: 800px;
-    height: 90vh;
+    min-height: 80vh;
     width: 100%;
     font-family: 'Press Start 2p', 'Courier New', Courier, monospace;
 }
