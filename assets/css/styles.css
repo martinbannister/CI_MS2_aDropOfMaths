@@ -359,6 +359,20 @@ form div.col {
 
 /* / GAME.html --------------------------------------------------- */
 
+/* HIGH_SCORES.html ---------------------------------------------- */
+
+.container {
+    background-color: #fff;
+    position: absolute;
+    top: 10vh;
+    max-width: 800px;
+    height: 70vh;
+    width: 100%;
+    z-index: 1;
+}
+
+/* / HIGH_SCORES.html -------------------------------------------- */
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 769px) {
