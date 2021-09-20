@@ -139,7 +139,11 @@ form div.col {
     margin-left: 10px;
     font-size: 2vh;
     text-align: center;
-    border: 0 none;
+    border-radius: 30px;
+}
+
+.settings_input:focus {
+    outline: none;
 }
 
 #play_button {
@@ -198,6 +202,10 @@ form div.col {
     border-radius: 30px;
     font-size: 3vh;
     text-align: center;
+}
+
+.score_form > input:focus {
+    outline: none;
 }
 
 .success {
