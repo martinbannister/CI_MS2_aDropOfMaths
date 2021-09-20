@@ -195,8 +195,9 @@ form div.col {
 }
 
 .score_form > input {
-    font-size: 3vh;
     border-radius: 30px;
+    font-size: 3vh;
+    text-align: center;
 }
 
 .success {
