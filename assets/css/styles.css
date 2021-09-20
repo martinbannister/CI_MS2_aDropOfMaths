@@ -368,6 +368,14 @@ form div.col {
     min-height: 80vh;
     width: 100%;
     font-family: 'Press Start 2p', 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+.scores_heading {
+    color: hsl(273, 100%, 50%);
+    margin: 20px auto;
+    text-align: center;
+    font-size: 24px;
 }
 
 #high_scores {
