@@ -522,7 +522,7 @@ function saveToHighscore(e) {
 
         let dataToSend = {
             'data': {
-                'initials': initals,
+                'initials': initals.toUpperCase(),
                 'score': intQuestions
             }
         };
