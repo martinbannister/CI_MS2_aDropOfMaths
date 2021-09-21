@@ -407,10 +407,11 @@ function startTimeLimit() {
         document.getElementById('target_result').textContent = 0;
         // clear the array of random numbers
         arrBubbleNums.length = 0;
-        // reset intCountdown, numberIndex and startTime
+        // reset intCountdown, numberIndex, startTime and clicks
         intCountdown = null;
         numberIndex = 0;
         startTime = null;
+        gblS.clicks = 0;
         // log the current state of gblS
         console.log(gblS);
         // display lose message
