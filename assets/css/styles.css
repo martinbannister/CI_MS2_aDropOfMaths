@@ -76,6 +76,9 @@ footer {
     bottom: 0;
     height: 10vh;
     background-color: var(--page_footer_bg_colour);
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
 }
 
 .navigation {
@@ -419,11 +422,18 @@ form div.col {
     min-height: 80vh;
     width: 100%;
     font-family: var(--font_family);
-    font-size: 12px;
+    font-size: 3vh;
 }
 
 .home_container p {
-    margin: 5px 15px;
+    margin: 0 50px;
+    padding: 20px 0;
+}
+
+.home_container h2 {
+    margin: 20px auto;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 
