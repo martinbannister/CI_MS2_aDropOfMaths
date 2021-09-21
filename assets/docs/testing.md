@@ -90,6 +90,13 @@ Click on the links to see each report:
 
 ## Bugs found and resolved during development
 
+**🐝 BUG: Scroll settings DIV on short screen**
+
+[https://stackoverflow.com/questions/3837037/div-with-scrollbar-inside-div-with-positionfixed#answer-3837111](https://stackoverflow.com/questions/3837037/div-with-scrollbar-inside-div-with-positionfixed#answer-3837111)
+
+**🐝 BUG: Uncaught RangeError: Maximum call stack size exceeded** 
+
+[https://stackoverflow.com/questions/6095530/maximum-call-stack-size-exceeded-error](https://stackoverflow.com/questions/6095530/maximum-call-stack-size-exceeded-error)
 - 
     - Fix: 
 
