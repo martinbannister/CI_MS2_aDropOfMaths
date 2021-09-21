@@ -505,7 +505,7 @@ function answerWrong() {
 function saveToHighscore(e) {
     try {
         let frm;
-        if (e.target.parentNode.parentNode.id === 'msg_win') {
+        if (e.target.parentNode.id === 'msg_win') {
             frm = document.getElementById('win_save_score');
         } else {
             frm = document.getElementById('lose_save_score');
