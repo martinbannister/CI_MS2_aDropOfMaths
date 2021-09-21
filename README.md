@@ -99,6 +99,12 @@ The reason for this is that I wanted the game to be accessibly to people of all 
 
 Just having the one child-like colour pallet could put off adult players.
 
+Below are the two colour schemes taken from the CSS file. As you will see the children's theme uses more of a wide range of bright colurs, where as the adult theme is largely based around shades of the same colour.  
+
+Although a bubble colour is specified for the children's theme for finctionality reasons the actual bubble colours are varied when created to make the experience more colourful and engaging.  The bubble colour when using the adult theme remanins static for each bubble.
+
+![alt text](assets/docs/images/colour_themes.png "colour themes from CSS")
+
 ### Typography
 I chose the short stack font for it's readable quality and because it reflects characters that are rendered in a more hand written way than traditional typography.  This should make it more readable and accessible for children.
 
