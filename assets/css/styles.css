@@ -368,7 +368,6 @@ form div.col {
     color: var(--bubble_text_colour);
     font-size: 30px;
     text-align: center;
-    padding-top: auto;
     display: flex;
     justify-content: center;
     align-items: center;
