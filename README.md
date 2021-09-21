@@ -123,21 +123,30 @@ No images have been used in the creation of the game.
 
 
 ## Wireframes
+You will notice the wireframes differ somewhat from the final game.  This is because the original game was intended to be a single page with an introduction to the game.
+
+With the inclusion of a home page and high scores page the design was adapted to suit this and have some consistenet layout across pages.
+
+Rather than tabs the selection of the calculation type is done in the settings screen before the game starts.
+
+There are no mock ups of the home page or high scores page as these were added after the design stage.
+
 ### Desktop
-[Index]()
+[Intro 1](assets/docs/wireframes/01 wireframe_desktop_start_1.pdf)
 
-[]()
+[Intro 2](assets/docs/wireframes/02 wireframe_desktop_start_2.pdf)
 
-[]()
+[Intro 3](assets/docs/wireframes/03 wireframe_desktop_start_3.pdf)
 
-[]()
+[Settings](assets/docs/wireframes/04 wireframe_desktop_settings.pdf)
 
-[]()
+[Addition](assets/docs/wireframes/05 wireframe_desktop_plus.pdf)
 
-### Tablet
+[Subtraction](assets/docs/wireframes/06 wireframe_desktop_minus.pdf)
 
+[Multiplication](assets/docs/wireframes/07 wireframe_desktop_times.pdf)
 
-### Mobile
+[Division](assets/docs/wireframes/08 wireframe_desktop_divide.pdf)
 
 
 
