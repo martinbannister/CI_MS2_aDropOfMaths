@@ -196,7 +196,7 @@ function generateNumbers(maxNum) {
     console.log('index1:', indexNo1, 'index2:', indexNo2);
 
     // calculate the number of numbers required
-    let numOfNums = Math.floor(gblS.timeLimit / 0.75);
+    let numOfNums = Math.floor(gblS.timeLimit);
     /* loop for the number of times required
         adding numbers to the array each iteration
         insert the backup numbers into random 
@@ -264,7 +264,7 @@ function bubbleDrop(timestamp) {
 
     /* check if 1 or more seconds have passed since
         the last iteration */
-    if (currentTime >= 750) {
+    if (currentTime >= 1000) {
         createBubble();
         numberIndex++;
         startTime = timestamp;
