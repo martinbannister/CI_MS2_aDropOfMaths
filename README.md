@@ -196,7 +196,9 @@ There are no mock ups of the home page or high scores page as these were added a
 ### Future Features
 Below is a list of features I would like to implement in the future.
 
-- 
+- Explosion effect on bubble click
+- A continuous mode to keep playing until you get an answer wrong
+- A random operator option to vary calculation types throughout play
 
 ## Technologies Used
 
@@ -225,38 +227,6 @@ Below is a list of features I would like to implement in the future.
 Testing is documented in the [testing.md](assets/docs/testing.md) file.
 
 [Back to Index](#table-of-contents)
-
-### Tests on Various Devices
-
-#### Devices Tested
-- Honor 10 (Chrome & Firefox)
-- Honor Play
-- Lenovo Thinkpad C13 Yoga (Chrome & Firefox)
-- iPhone XS Max
-
-#### Tests Performed
-
-
-#### Results
-
-
-### Browser Compatibility
-- Google Chrome
-- Mozilla Firefox
-
-### Testing User Stories
-
-
-## Bugs found and resolved during development
-
-- 
-    - Fix: 
-
-- 
-    - Fix: 
-
-- 
-    - Fix: 
 
 
 ## Deployment
