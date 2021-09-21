@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 //  declare an object to hold settings used throughout functions (global (gbl) Settings (S))
 const gblS = {
     gameStyle: '',
@@ -56,16 +58,16 @@ function playClick(e) {
     gameStyle.forEach(i => { if (i.checked) { objSettings.gameStyle = i.value; } });
 
     // store game setting numbers
-    objSettings.maxNumber = settingsForm.elements['max_num'].value;
-    objSettings.speed = settingsForm.elements['max_speed'].value;
-    objSettings.qTime = settingsForm.elements['q_time'].value;
-    objSettings.noOfQs = settingsForm.elements['max_qs'].value;
+    objSettings.maxNumber = settingsForm.max_num.value;
+    objSettings.speed = settingsForm.max_speed.value;
+    objSettings.qTime = settingsForm.q_time.value;
+    objSettings.noOfQs = settingsForm.max_qs.value;
 
     // store the selected calculation type
     let calcType = document.getElementsByName('calc_type');
-    calcType.forEach(i => { if (i.checked) { objSettings.calcType = i.value } });
+    calcType.forEach(i => { if (i.checked) { objSettings.calcType = i.value; } });
 
-    document.documentElement.style.setProperty('--animation_speed', `${objSettings.speed}s`)
+    document.documentElement.style.setProperty('--animation_speed', `${objSettings.speed}s`);
 
     console.log(objSettings);
 
@@ -150,16 +152,16 @@ function startGame(objSettings) {
         on the calcType string */
     switch (gblS.calcType) {
         case 'add':
-            gblS.operator = '+'
+            gblS.operator = '+';
             break;
         case 'subtract':
-            gblS.operator = '−'
+            gblS.operator = '−';
             break;
         case 'multiply':
-            gblS.operator = '×'
+            gblS.operator = '×';
             break;
         case 'divide':
-            gblS.operator = '÷'
+            gblS.operator = '÷';
             break;
         default:
             console.log('Calc Type selection', 'something went wrong');
@@ -263,7 +265,7 @@ function bubbleDrop(timestamp) {
         startTime = timestamp;
     }
 
-    currentTime = timestamp - startTime;
+    let currentTime = timestamp - startTime;
 
     /* check if 1 or more seconds have passed since
         the last iteration */
@@ -486,7 +488,7 @@ function answerCorrect() {
 
         // hide correct message after 2 seconds
         setTimeout(() => {
-            msg.style.display = 'none'
+            msg.style.display = 'none';
             newQuestion();
         }, 2000, msg);
     }
@@ -502,7 +504,7 @@ function answerWrong() {
     msg.style.display = 'flex';
     // cancelAnimationFrame(rAf);
 
-    setTimeout(() => { msg.style.display = 'none' }, 500, msg);
+    setTimeout(() => { msg.style.display = 'none'; }, 500, msg);
 }
 
 function saveToHighscore(e) {
@@ -530,8 +532,9 @@ function saveToHighscore(e) {
             }
         };
 
+        // SheetDB comes from external SheetDB api referenced in script tag in game.html
         SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
-                window.location = 'high_scores.html'
+                window.location = 'high_scores.html';
             }, function(error){
                 console.log(error);
                 throw(error);
@@ -556,7 +559,7 @@ settingsForm.addEventListener('submit', playClick);
 // add event listener to Adult/Child radio buttons
 // to vary the theme before Play is clicked (form is submitted)
 let radioGameStyle = document.getElementsByName('game_style');
-radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange) });
+radioGameStyle.forEach(radio => { radio.addEventListener('change', themeChange); });
 
 // add event listener to display settings div after it's been closed
 let spanSettings = document.getElementById('show_settings');
@@ -566,7 +569,7 @@ spanSettings.addEventListener('click', () => document.getElementById('overlay_di
 let divOverlay = document.getElementById('overlay_div');
 divOverlay.addEventListener('click', (e) => {
     if (e.target.id === 'overlay_div') {
-        e.target.style.display = 'none'
+        e.target.style.display = 'none';
     }
 });
 
