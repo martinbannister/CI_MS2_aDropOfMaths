@@ -488,7 +488,7 @@ function answerCorrect() {
         setTimeout(() => {
             msg.style.display = 'none'
             newQuestion();
-        }, 1000, msg);
+        }, 2000, msg);
     }
 
     // empty out random numbers array
