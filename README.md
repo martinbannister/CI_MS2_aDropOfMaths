@@ -8,8 +8,7 @@ If you would like to have a go yourself and challenege your mental artihmetic sk
 ## Table of Contents
 ---
 1. [Project Goals](#project-goals)
-    1. [Business Goals](#business-goals)
-    2. [User Goals](#user-goals)
+
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Stories](#user-stories)
@@ -32,10 +31,13 @@ If you would like to have a go yourself and challenege your mental artihmetic sk
 
 ## Project Goals
 ---
-### Business Goals
+The goals of the project are the same for all stakeholders.  
 
-### User Goals
-- 
+### For players
+To have fun whilst improving their mental arithmetic skills.
+
+### For the site creator
+To create a fun and challenging game that they can enjoy as well as their site visitors.
 
 [Back to Index](#table-of-contents)
 
