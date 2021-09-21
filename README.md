@@ -1,5 +1,9 @@
-# CI_MS2_aDropOfMaths
-A mathematical game
+# A Drop of Maths
+[A Drop of Maths](https://martinbannister.github.io/CI_MS2_aDropOfMaths/) is a mathematical game for people of all ages to enjoy and improve or maintain their mental arithmetic skills.  
+
+The game has been designed to be both fun and challenging whatever your still level and game settings can be customised to change the level of difficulty.  There is even a choice of game theme for children or adults.  The theme for children is more bright and colourful and the theme for adults is largely monochromatic based on variations of the same blue colour.  The theme is purely cosmetic as the game settings determine the difficulty.
+
+If you would like to have a go yourself and challenege your mental artihmetic skills A Drop of Maths can be found at [https://martinbannister.github.io/CI_MS2_aDropOfMaths/](https://martinbannister.github.io/CI_MS2_aDropOfMaths/).
 
 ## Table of Contents
 ---
