@@ -407,8 +407,7 @@ function startTimeLimit() {
         document.getElementById('target_result').textContent = 0;
         // clear the array of random numbers
         arrBubbleNums.length = 0;
-        // reset intQuestions, intCountdown, numberIndex and startTime
-        intQuestions = 0;
+        // reset intCountdown, numberIndex and startTime
         intCountdown = null;
         numberIndex = 0;
         startTime = null;
@@ -533,6 +532,9 @@ function saveToHighscore(e) {
                 console.log(error);
                 throw(error);
         });
+
+        // reset intQuestions once value has been written to high score
+        intQuestions = 0;
     }
 
     catch(err) {
@@ -570,6 +572,8 @@ msgLose.addEventListener('click', (e) => {
     if (e.target.id === 'msg_lose') {
         document.getElementById('msg_lose').style.display = 'none';
         document.getElementById('overlay_div').style.display = 'flex';
+        // reset intQuestions in case the user doesn't submit their high score
+        intQuestions = 0;
     }
 });
 
@@ -579,6 +583,8 @@ msgWin.addEventListener('click', (e) => {
     if (e.target.id === 'msg_win') {
         document.getElementById('msg_win').style.display = 'none';
         document.getElementById('overlay_div').style.display = 'flex';
+        // reset intQuestions in case the user doesn't submit their high score
+        intQuestions = 0;
     }
 });
 
