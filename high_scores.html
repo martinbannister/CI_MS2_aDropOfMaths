@@ -52,12 +52,9 @@
          https://github.com/google/google-api-javascript-client/blob/master/docs/start.md
          */
 
-        function authenticate() {
-            return gapi.auth2.getAuthInstance()
-                .signIn({ scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly" })
-                .then(function () { console.log("Sign-in successful"); },
-                    function (err) { console.error("Error signing in", err); });
-        }
+         /**
+          * Passes the api key to a client request to access the Google Sheets api, uses a promise like .then to call the get scores request
+         */
         function loadClient() {
             gapi.client.setApiKey("AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY");
             return gapi.client.load("https://sheets.googleapis.com/$discovery/rest?version=v4")
@@ -67,7 +64,11 @@
                 },
                     function (err) { console.error("Error loading GAPI client for API", err); });
         }
-        // Make sure the client is loaded and sign-in is complete before calling this method.
+
+        /** 
+         * Makes a Google Sheets api request to retrieve the data from the spreadsheet where high scores are saved, uses a promise like .then to pass the successful call to the buildTable function
+         * @returns {objext} The JSON object returned by the api call
+        */
         function getScores() {
             return gapi.client.sheets.spreadsheets.values.get({
                 "spreadsheetId": "1UQPFk1pgxJHESHmhj505eYeq2ec_4I5uoi65IVahiRs",
@@ -82,13 +83,10 @@
                     function (err) { console.error("Execute error", err); });
         }
 
-        gapi.load('client', function () {
-            gapi.client.init({
-                'apiKey': 'AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY'
-            })
-                .then(loadClient());
-        });
-
+        /**
+         * Takes the data passed in and for each row of data adds a new row to the high scores table containing said data
+         * @param {object} data The response result from the Google Sheets api call
+        */
         function buildTable(data) {
             let tblScores = document.querySelector('#high_scores > tbody');
             let arrScores = data.values;
@@ -113,13 +111,20 @@
                 tblScores.appendChild(row);
                 rowHue += 40;
             });
-
         }
+
+        // called when script loads
+        // initialises the google services api
+        gapi.load('client', function () {
+            gapi.client.init({
+                'apiKey': 'AIzaSyCfPy5be2i-S3bUUPeNn3Uq7kyOPv2O0hY'
+            })
+                .then(loadClient());
+        });
 
     </script>
 
     <script src="//sheetdb.io/api/js"></script>
-    <script src="assets/js/high_scores.js"></script>
 </body>
 
 </html>
