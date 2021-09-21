@@ -66,3 +66,35 @@ Click on the links to see each report:
 - [Lighthouse ]()
 
 - [Lighthouse 404.html]()
+
+### Tests on Various Devices
+
+#### Devices Tested
+- Honor 10 (Chrome & Firefox)
+- Honor Play
+- Lenovo Thinkpad C13 Yoga (Chrome & Firefox)
+- iPhone XS Max
+
+#### Tests Performed
+
+
+#### Results
+
+
+### Browser Compatibility
+- Google Chrome
+- Mozilla Firefox
+
+### Testing User Stories
+
+
+## Bugs found and resolved during development
+
+- 
+    - Fix: 
+
+- 
+    - Fix: 
+
+- 
+    - Fix: 
