@@ -3,7 +3,11 @@
 
 The game has been designed to be both fun and challenging whatever your still level and game settings can be customised to change the level of difficulty.  There is even a choice of game theme for children or adults.  The theme for children is more bright and colourful and the theme for adults is largely monochromatic based on variations of the same blue colour.  The theme is purely cosmetic as the game settings determine the difficulty.
 
-If you would like to have a go yourself and challenege your mental artihmetic skills A Drop of Maths can be found at [https://martinbannister.github.io/CI_MS2_aDropOfMaths/](https://martinbannister.github.io/CI_MS2_aDropOfMaths/).
+If you would like to have a go yourself and challenege your mental artihmetic skills **_A Drop of Maths_** can be found at [https://martinbannister.github.io/CI_MS2_aDropOfMaths/](https://martinbannister.github.io/CI_MS2_aDropOfMaths/).
+
+![alt text](assets/docs/images/responsive1.png "Responsive Home Page mockup")
+![alt text](assets/docs/images/responsive2.png "Responsive Game Page mockup")
+![alt text](assets/docs/images/responsive3.png "Responsive High Scores Page mockup")
 
 ## Table of Contents
 ---
