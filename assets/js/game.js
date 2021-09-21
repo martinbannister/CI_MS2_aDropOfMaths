@@ -484,7 +484,7 @@ function answerCorrect() {
         // clear any remaining bubbles from container div
         gblS.container.replaceChildren();
 
-        // hide correct message after 1 second
+        // hide correct message after 2 seconds
         setTimeout(() => {
             msg.style.display = 'none'
             newQuestion();
