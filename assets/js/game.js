@@ -522,9 +522,10 @@ function saveToHighscore(e) {
         };
 
         SheetDB.write('https://sheetdb.io/api/v1/o9udtiqi23nf0', dataToSend).then(function(result){
-            console.log(result);
+                window.location = 'high_scores.html'
             }, function(error){
-            console.log(error);
+                console.log(error);
+                throw(error);
         });
     }
 
