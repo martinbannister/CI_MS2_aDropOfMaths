@@ -512,7 +512,13 @@ function saveToHighscore(e) {
         }
         
         console.log('form id', frm.id); 
-        let initals = frm.id === 'win_save_score' ? frm.win_initals.value : frm.lose_initials.value;
+        if (frm.id === 'win_save_score') {
+            console.log(frm.win_initials.value);
+        } else {
+            console.log(frm.lose_initials.value);
+        }
+
+        let initals = frm.id === 'win_save_score' ? frm.win_initials.value : frm.lose_initials.value;
 
         let dataToSend = {
             'data': {
