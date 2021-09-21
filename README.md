@@ -47,7 +47,9 @@ To create a fun and challenging game that they can enjoy as well as their site v
 
 ## User Experience
 ---
+The author designed the site so that the game can be played on a veriety of devices and screeen sizes.  The author's goal was to create a game that was both fun and educational and could be played by both children and adults.  This is achieved through customisation options that allow the parameters of the game to be changed by the player and includes separate colour themes for children and adults.
 
+The children's theme is the default because the author wanted the least amount of friction to children playing and enjoying the game.
 
 ### Target Audience
 - 
@@ -57,29 +59,29 @@ To create a fun and challenging game that they can enjoy as well as their site v
 
 ##### Parents
 As a parent:
-- I want a game that is easy to play and understand.
-- I want a game that I can customise to my child's level of ability.
-- I want my children to play a game that is educational.
-- I want my children to be able to play a game that is safe.
-- I want my children to be engaged and have fun.
-- I wany my children to feel a sense of achievement.
+1. I want a game that is easy to play and understand.
+2. I want a game that I can customise to my child's level of ability.
+3. I want my children to play a game that is educational.
+4. I want my children to be able to play a game that is safe.
+5. I want my children to be engaged and have fun.
+6. I wany my children to feel a sense of achievement.
+
+[Back to Index](#table-of-contents)
 
 ##### Adults
-- I want to improve my mental artihmatic skills.
-- I want to be able to play the game quickly.
-- I want to feel like I am playing something serious and not silly.
-- I want the game to be available across all my devices.
-- I want to be able to save my progress.
+7. I want to improve my mental artihmatic skills.
+8. I want to be able to play the game quickly.
+9. I want to feel like I am playing something serious and not silly.
+10. I want the game to be available across all my devices.
+11. I want to be able to save my progress.
 
 
 [Back to Index](#table-of-contents)
 
 #### Returning Visitors
-- I want to see my previous scores.
-- I want to be able to change settings to make the game more challenging.
+12. I want to see my previous scores.
+13. I want to be able to change settings to make the game more challenging.
 
-
-[Back to Index](#table-of-contents)
 
 
 [Back to Index](#table-of-contents)
