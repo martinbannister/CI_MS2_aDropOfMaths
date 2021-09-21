@@ -106,13 +106,15 @@ Although a bubble colour is specified for the children's theme for finctionality
 ![alt text](assets/docs/images/colour_themes.png "colour themes from CSS")
 
 ### Typography
-I chose the short stack font for it's readable quality and because it reflects characters that are rendered in a more hand written way than traditional typography.  This should make it more readable and accessible for children.
+The author chose the short stack font for it's readable quality and because it reflects characters that are rendered in a more hand written way than traditional typography.  This should make it more readable and accessible for children.
 
-I chose Schoolbell because it has a more childlike, handwriten quality but is less readable.  As such it's use has been limited to in-game pop up messages such as, correct, try again and you won.
+The author chose Schoolbell because it has a more childlike, handwriten quality but is less readable.  As such it's use has been limited to in-game pop up messages such as, correct, try again and you won.
 
-I chose the "Press Start 2P" font for the high scores page because it has an 8 bit retro feel.  I wanted to recreate an arcade style high score page and this fits perfectly.
+The author chose the "Press Start 2P" font for the high scores page because it has an 8 bit retro feel.  The author wanted to recreate an arcade style high score page and this fits perfectly.
 
-For the adult theme I have chosen to use the Ariel font throughout to keep the theme more serious looking.
+For the adult theme The author has chosen to use the Ariel font throughout to keep the theme more serious looking.
+
+The Material Icons font is used for the settings button icon.
 
 All fonts are served from [Google Fonts](https://fonts.google.com/)
 
