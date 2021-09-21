@@ -592,4 +592,7 @@ msgWin.addEventListener('click', (e) => {
 let save_buttons = document.querySelectorAll('.score_save');
 save_buttons.forEach(elem => {
     elem.addEventListener('click', saveToHighscore);
-})
+});
+
+// try to hide the adress bar when the file is loaded
+window.scroll(0,1);
