@@ -90,12 +90,16 @@ Just having the one child-like colour pallet could put off adult players.
 ### Typography
 I chose the short stack font for it's readable quality and because it reflects characters that are rendered in a more hand written way than traditional typography.  This should make it more readable and accessible for children.
 
-Both fonts are served from [Google Fonts](https://fonts.google.com/)
+I chose Schoolbell because it has a more childlike, handwriten quality but is less readable.  As such it's use has been limited to in-game pop up messages such as, correct, try again and you won.
+
+I chose the "Press Start 2P" font for the high scores page because it has an 8 bit retro feel.  I wanted to recreate an arcade style high score page and this fits perfectly.
+
+For the adult theme I have chosen to use the Ariel font throughout to keep the theme more serious looking.
+
+All fonts are served from [Google Fonts](https://fonts.google.com/)
 
 ### Images
-
-
-#### My Images
+No images have been used in the creation of the game.
 
 
 ## Wireframes
