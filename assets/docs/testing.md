@@ -70,13 +70,15 @@ Click on the links to see each report:
 ### Tests on Various Devices
 
 #### Devices Tested
-- Honor 10 (Chrome & Firefox)
+- Redmi Note 9
 - Honor Play
 - Lenovo Thinkpad C13 Yoga (Chrome & Firefox)
-- iPhone XS Max
 
 #### Tests Performed
 
+The following video shows the testing of user stories 1 to 13, excluding 9.  It demonstrates the variablility of the game settings, the ability to very the type of calculation and how to see pevious scores.  It does not show user story 9, which would be covered by the adult theme.
+
+https://user-images.githubusercontent.com/78867133/134156960-e464363a-23eb-4beb-99e5-482454b8df91.mp4
 
 #### Results
 
