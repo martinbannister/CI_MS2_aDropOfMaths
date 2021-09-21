@@ -234,7 +234,7 @@ Testing is documented in the [testing.md](assets/docs/testing.md) file.
 ### GitHub Pages
 I have used GitHub pages to deploy this page.  If you would like to do the same you can follow these steps:
 
-1. Log into your GitHub account and find the [repository](). 
+1. Log into your GitHub account and find the [repository](https://martinbannister.github.io/CI_MS2_aDropOfMaths/). 
 2. Click on 'Settings' in the repository. 
 3. Click 'Pages' in the left-hand menu once you're in Settings. 
 4. Click 'Source'.
@@ -245,14 +245,14 @@ I have used GitHub pages to deploy this page.  If you would like to do the same 
 ### Forking the GitHub Repository
 If you would like to fork this respository so you can make changes without affecting the original please follow these steps:
 
-1. Log into your GitHub account and find the [repository]().
+1. Log into your GitHub account and find the [repository](https://martinbannister.github.io/CI_MS2_aDropOfMaths/).
 2. Click 'Fork' (last button on the top right of the repository page).
 3. You will then have a copy of the repository in your own GitHub account. 
 
 ### Making a Local Clone
 In order to make a clone of this repository to work on locally, follow these steps:
 
-1. Log into your GitHub account and find the [repository]().
+1. Log into your GitHub account and find the [repository](https://martinbannister.github.io/CI_MS2_aDropOfMaths/).
 2. Click on the 'Code' button (next to 'Add file'). 
 3. To clone the repository using HTTPS, under clone with HTTPS, copy the link.
 4. Then open Git Bash.
@@ -265,11 +265,37 @@ In order to make a clone of this repository to work on locally, follow these ste
 *All credits included in code where applicable*
 
 ### Code references
-#### 1. **Credit Title** - For [Feature](https://addressofreference.com)
 
-#### 2. **Stack Overflow** - [default select option as blank - Stack Overflow](https://stackoverflow.com/questions/8605516/default-select-option-as-blank)
+#### 1. **How to layout divs**
 
-### Media
+[https://coder-coder.com/display-divs-side-by-side/](https://coder-coder.com/display-divs-side-by-side/)
 
+[https://www.w3schools.com/css/css_grid.asp](https://www.w3schools.com/css/css_grid.asp)
+
+#### 2. **Linear gradients for logo text**
+
+[https://cssgradient.io/blog/css-gradient-text/](https://cssgradient.io/blog/css-gradient-text/)
+
+[https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient())
+
+#### 3. **Opposite colour using HSL**
+
+[https://stackoverflow.com/questions/44912849/find-the-opposite-of-a-direction-angle-360-degrees-in-javascript/44912872](https://stackoverflow.com/questions/44912849/find-the-opposite-of-a-direction-angle-360-degrees-in-javascript/44912872)
+
+#### 4. **Using CSS variables to make themes**
+
+[https://www.sitepoint.com/css-theming-custom-properties-javascript/](https://www.sitepoint.com/css-theming-custom-properties-javascript/)
+
+#### 5. **Create custom radio buttons**
+
+[https://www.w3schools.com/howto/howto_css_custom_checkbox.asp](https://www.w3schools.com/howto/howto_css_custom_checkbox.asp)
+
+#### 6. **Update CSS Variables from JS**
+
+[https://css-tricks.com/updating-a-css-variable-with-javascript/](https://css-tricks.com/updating-a-css-variable-with-javascript/)
+
+#### 7. **Clearing all child elements**
+
+[https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript#answer-65413839](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript#answer-65413839)
 
 ### Acknowledgements
