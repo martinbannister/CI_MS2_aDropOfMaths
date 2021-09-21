@@ -409,6 +409,26 @@ form div.col {
 
 /* / HIGH_SCORES.html -------------------------------------------- */
 
+/* INDEX.html ---------------------------------------------- */
+
+.home_container {
+    background-color: hsl(0, 0%, 13%);
+    color: hsl(0, 0%, 80%);
+    position: relative;
+    max-width: 800px;
+    min-height: 80vh;
+    width: 100%;
+    font-family: var(--font_family);
+    font-size: 12px;
+}
+
+.home_container p {
+    margin: 5px 15px;
+}
+
+
+/* / INDEX.html ---------------------------------------------- */
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 769px) {
