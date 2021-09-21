@@ -21,6 +21,7 @@
     --message_success_colour: hsl(240,100%, 50%);
     --message_failure_colour: hsl(0, 80%, 40%);
     --font_family: 'Short Stack', cursive;
+    --msg_font_family: Schoolbell, cursive;
 }
 
 :root[theme='adult'] {
@@ -41,6 +42,7 @@
     --message_success_colour: hsl(84,60%, 50%);
     --message_failure_colour: hsl(0, 80%, 40%);
     --font_family: Arial, Helvetica, sans-serif;
+    --msg_font_family: Arial, Helvetica, sans-serif;
 }
 
 /* ------------------ PAGE LAYOUT ------------------ */
@@ -183,6 +185,7 @@ form div.col {
     padding: 10px;
     font-size: 6vh;
     text-align: center;
+    font-family: var(--msg_font_family);
 }
 
 .score_form {
