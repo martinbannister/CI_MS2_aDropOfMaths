@@ -19,6 +19,7 @@ const gblS = {
     hue: 0,
     hueOpp: 0,
     clicks: 0,
+    paused: false,
 };
 
 // global variables required by bubbleDrop()
@@ -81,6 +82,23 @@ function playClick(e) {
     console.log(gblS);
 
     startGame(objSettings);
+}
+
+
+
+function pauseClick() {
+    let bubbles = document.querySelectorAll('.bubble');
+    bubbles.forEach(bubble => {
+        let state = bubble.style.animationPlayState;
+        bubble.style.animationPlayState = gblS.paused === false ? 'paused' : 'running';
+    });
+    if (gblS.paused) {
+        bubbleDrop();
+    } else {
+        cancelAnimationFrame(rAf);
+    }
+
+    gblS.paused = !gblS.paused;
 }
 
 
