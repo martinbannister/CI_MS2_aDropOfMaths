@@ -85,7 +85,9 @@ function playClick(e) {
 }
 
 
-
+/**
+ * Pauses or resumes the game
+ */
 function pauseClick() {
     let bubbles = document.querySelectorAll('.bubble');
     bubbles.forEach(bubble => {
