@@ -441,6 +441,24 @@ form div.col {
     text-align: center;
 }
 
+.play_button {
+    display: inline-block;
+    background-color: var(--play_button_bg_colour);
+    color: var(--play_button_text_colour);
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 0 auto;
+    border: 2px outset var(--play_button_bg_colour);
+    filter: drop-shadow(2px 4px 4px #fff);
+    font-size: 4vh;
+    text-align: center;
+}
+
+.home_image {
+    max-width: 600px;
+    filter: drop-shadow(2px 4px 4px #fff);
+}
+
 
 /* / INDEX.html ---------------------------------------------- */
 
