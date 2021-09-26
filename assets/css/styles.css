@@ -428,6 +428,10 @@ form div.col {
     width: 100%;
     font-family: var(--font_family);
     font-size: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .home_container p {
@@ -445,18 +449,24 @@ form div.col {
     display: inline-block;
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
+    border: 5px outset var(--play_button_bg_colour);
     border-radius: 10px;
     padding: 5px 10px;
     margin: 0 auto;
-    border: 2px outset var(--play_button_bg_colour);
-    filter: drop-shadow(2px 4px 4px #fff);
+    filter: drop-shadow(2px 2px 4px hsl(0, 0%, 50%));
     font-size: 4vh;
     text-align: center;
 }
 
 .home_image {
     max-width: 600px;
-    filter: drop-shadow(2px 4px 4px #fff);
+    filter: drop-shadow(2px 2px 4px hsl(0, 0%, 50%));
+    border-radius: 5px;
+}
+
+.centre {
+    text-align: center;
+    line-height: 6vh;
 }
 
 
