@@ -94,10 +94,14 @@ function pauseClick() {
         let state = bubble.style.animationPlayState;
         bubble.style.animationPlayState = gblS.paused === false ? 'paused' : 'running';
     });
+
+    let pauseButton = document.querySelector('#pause > span');
     if (gblS.paused) {
         bubbleDrop();
+        pauseButton.innerHTML = 'paused';
     } else {
         cancelAnimationFrame(rAf);
+        pauseButton.innerHTML = 'play_arrow';
     }
 
     gblS.paused = !gblS.paused;
@@ -620,3 +624,6 @@ let save_buttons = document.querySelectorAll('.score_save');
 save_buttons.forEach(elem => {
     elem.addEventListener('click', saveToHighscore);
 });
+
+let btnPause = document.getElementById('pause');
+btnPause.addEventListener('click', pauseClick);
