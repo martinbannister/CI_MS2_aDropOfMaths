@@ -22,6 +22,14 @@
     --message_failure_colour: hsl(0, 80%, 40%);
     --font_family: 'Short Stack', cursive;
     --msg_font_family: Schoolbell, cursive;
+
+    /* Global variables */
+    --bubble_before_size: 13%;
+    --bubble_after_size: 7%;
+    --bubble_before_top: 23%;
+    --bubble_before_left: 16%;
+    --bubble_after_top: 16%;
+    --bubble_after_left: 33%;
 }
 
 :root[theme='adult'] {
@@ -375,6 +383,32 @@ form div.col {
     animation-duration: var(--animation_speed);
     animation-timing-function: linear;
     animation-iteration-count: 1;
+    box-shadow: inset 7px 7px 7px rgba(0, 0, 0, 0.05),
+    10px 16px 7px rgba(0, 0, 0, 0.05),
+    10px 13px 13px rgba(0, 0, 0, 0.05),
+    inset -7px -7px 10px rgba(244, 255, 255, 0.09);
+}
+
+.bubble::before {
+    content: '';
+    position: absolute;
+    top: var(--bubble_before_top);
+    left: var(--bubble_before_left);
+    width: var(--bubble_before_size);
+    height: var(--bubble_before_size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: var(--bubble_after_top);
+    left: var(--bubble_after_left);
+    width: var(--bubble_after_size);
+    height: var(--bubble_after_size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes bubble_drop {
