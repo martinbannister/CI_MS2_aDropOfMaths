@@ -397,7 +397,7 @@ form div.col {
     width: var(--bubble_before_size);
     height: var(--bubble_before_size);
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .bubble::after {
@@ -408,7 +408,7 @@ form div.col {
     width: var(--bubble_after_size);
     height: var(--bubble_after_size);
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 @keyframes bubble_drop {
