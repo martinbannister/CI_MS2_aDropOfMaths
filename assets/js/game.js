@@ -159,7 +159,7 @@ function startGame(objSettings) {
     // store operand divs
     gblS.operand1 = document.getElementById('operand_1');
     gblS.operand2 = document.getElementById('operand_2');
-    // get constants for container area to user for bubble positions
+    // get constants for container area to use for bubble positions
     gblS.CONTAINER_HEIGHT = parseInt(getComputedStyle(gblS.container).getPropertyValue('height'));
     gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
 
@@ -312,7 +312,7 @@ function bubbleDrop(timestamp) {
 
 /**
  * Creates a new randomly horizontal positioned div within the limits of the game container
- * styles appropriately, attaches click event listener and adds to the game container
+ * styled appropriately, attaches click event listener and adds to the game container
  */
 function createBubble() {
     let newBubble = document.createElement('div');
@@ -334,7 +334,7 @@ function createBubble() {
     // add event listener to remove bubble from DOM when animation ends
     newBubble.addEventListener('animationend', () => gblS.container.removeChild(newBubble));
     gblS.container.appendChild(newBubble);
-    // increment hue so for child theme bubble colours change
+    // increment hue so, for child theme, bubble colours change
     gblS.hue += 15;
 }
 
