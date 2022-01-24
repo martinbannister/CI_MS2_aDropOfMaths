@@ -13,6 +13,7 @@
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(84, 100%, 59%);
     --play_button_bg_colour: hsl(240, 100%, 50%);
+    --play_button_bg_hover_colour: hsl(240, 100%, 60%);
     --play_button_text_colour:hsl(240,100%, 100%);
     --custom_radio_bg_colour: hsl(0, 60%, 50%);
     --custom_radio_bg_hover: hsl(0, 60%, 80%);
@@ -42,6 +43,7 @@
     --bubble_text_colour:hsl(209,100%,100%);
     --target_result_colour: hsl(209, 100%, 100%);
     --play_button_bg_colour: hsl(209, 50%, 60%);
+    --play_button_bg_hover_colour: hsl(209, 50%, 70%);
     --play_button_text_colour: hsl(209,50%, 15%);
     --custom_radio_bg_colour: hsl(209, 50%, 50%);
     --custom_radio_bg_hover: hsl(209, 50%, 80%);
@@ -163,8 +165,18 @@ form div.col {
     background-color: var(--play_button_bg_colour);
     color: var(--play_button_text_colour);
     border-radius: 10px;
+    border: 0;
     margin: 0 auto;
+    padding: 1vh 2vh;
     font-size: 4vh;
+    box-shadow: inset 0.28vw 0.28vw 0.28vw rgba(0, 0, 0, 0.1),
+                0.4vw 0.64vw 0.28vw rgba(0, 0, 0, 0.1),
+                0.4vw 0.52vw 0.52vw rgba(0, 0, 0, 0.1),
+                inset -0.28vw -0.28vw 0.4vw rgba(255, 255, 255, 0.5);
+}
+
+#play_button:hover {
+    background-color: var(--play_button_bg_hover_colour);
 }
 
 /* ------------------ / SETTINGS DIVS ------------------ */
@@ -271,6 +283,7 @@ form div.col {
     to create circles with text centered
     horizontally and vertically */
 .custom_radio {
+    position: relative;
     display:flex;
     height: 4vw;
     width: 4vw;
@@ -280,6 +293,32 @@ form div.col {
     align-items: center;
     font-size: 3vw;
     font-weight: 700;
+    box-shadow: inset 0.28vw 0.28vw 0.28vw rgba(0, 0, 0, 0.05),
+                0.4vw 0.64vw 0.28vw rgba(0, 0, 0, 0.05),
+                0.4vw 0.52vw 0.52vw rgba(0, 0, 0, 0.05),
+                inset -0.28vw -0.28vw 0.4vw rgba(255, 255, 255, 0.09);
+}
+
+.custom_radio::before {
+    content: '';
+    position: absolute;
+    top: var(--bubble_before_top);
+    left: var(--bubble_before_left);
+    width: var(--bubble_before_size);
+    height: var(--bubble_before_size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.custom_radio::after {
+    content: '';
+    position: absolute;
+    top: var(--bubble_after_top);
+    left: var(--bubble_after_left);
+    width: var(--bubble_after_size);
+    height: var(--bubble_after_size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* hover effect for the spans 
@@ -384,9 +423,9 @@ form div.col {
     animation-timing-function: linear;
     animation-iteration-count: 1;
     box-shadow: inset 7px 7px 7px rgba(0, 0, 0, 0.05),
-    10px 16px 7px rgba(0, 0, 0, 0.05),
-    10px 13px 13px rgba(0, 0, 0, 0.05),
-    inset -7px -7px 10px rgba(244, 255, 255, 0.09);
+                10px 16px 7px rgba(0, 0, 0, 0.05),
+                10px 13px 13px rgba(0, 0, 0, 0.05),
+                inset -7px -7px 10px rgba(255, 255, 255, 0.09);
 }
 
 .bubble::before {
@@ -520,6 +559,10 @@ form div.col {
         height: 8vw;
         width: 8vw;
         font-size: 7vw;
+        box-shadow: inset 0.56vw 0.56vw 0.56vw rgba(0, 0, 0, 0.05),
+                    0.8vw 1.28vw 0.56vw rgba(0, 0, 0, 0.05),
+                    0.8vw 1.04vw 1.04vw rgba(0, 0, 0, 0.05),
+                    inset -0.56vw -0.56vw 0.8vw rgba(255, 255, 255, 0.09);
     }
 
     /* / CUSTOM RADIO GROUP */
@@ -542,6 +585,10 @@ form div.col {
         height: 15vw;
         width: 15vw;
         font-size: 14vw;
+        box-shadow: inset 1.05vw 1.05vw 1.05vw rgba(0, 0, 0, 0.05),
+                    1.5vw 2.4vw 1.05vw rgba(0, 0, 0, 0.05),
+                    1.5vw 1.95vw 1.95vw rgba(0, 0, 0, 0.05),
+                    inset -1.05vw -1.05vw 1.5vw rgba(255, 255, 255, 0.09);
     }
 
     /* / CUSTOM RADIO GROUP */
