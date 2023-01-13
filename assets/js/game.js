@@ -128,10 +128,11 @@ function themeChange() {
  * @param {number} maxNumber the maximum number to generate
  * @returns {number} a randomly generated number
  */
-function generateNumber(maxNumber) {
+function generateNumber(maxNumber, minNumber) {
+    // REF: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     // minus one prevents the number going over the maximum
     // REMOVED - zero may be needed: plus one keeps the number above zero
-    return Math.floor(Math.random() * (maxNumber - 1) + 1);
+    return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 }
 
 
@@ -164,7 +165,7 @@ function startGame(objSettings) {
     gblS.CONTAINER_WIDTH = parseInt(getComputedStyle(gblS.container).getPropertyValue('width'));
 
     // target number for the current question
-    let target_num = generateNumber(gblS.maxNum);
+    let target_num = generateNumber(gblS.maxNum, 1);
 
     // populate the target number div
     document.getElementById('target_result').textContent = target_num;
@@ -252,7 +253,31 @@ function generateNumbers(maxNum) {
  */
 function generateBackupNos(targetNum) {
     // generate two numbers to include in bubbles to ensure question can be answered
-    backupNum1 = generateNumber(gblS.maxNum);
+    let minimum = 0;
+    let maximum = 0;
+
+    switch (gblS.calcType) {
+        case 'add':
+            minimum = 0;
+            maximum = targetNum;
+            break;
+        case 'subtract':
+            minimum = targetNum;
+            maximum = 0;
+            break;
+        case 'multiply':
+            
+            break;
+        case 'divide':
+            
+            break;
+        default:
+            console.log('Generate backup numbers', 'something went wrong setting min and max');
+    }
+
+    console.log('Backup Nos, Max:', maximum, 'Min:', minimum);
+    
+    backupNum1 = generateNumber(maximum, minimum);
     switch (gblS.calcType) {
         case 'add':
             backupNum2 = targetNum - backupNum1;
@@ -455,7 +480,7 @@ function newQuestion() {
     console.log('new question started');
     intQuestions++;
     // populate the target number div with a new generated number
-    let target_num = generateNumber(gblS.maxNum);
+    let target_num = generateNumber(gblS.maxNum, 0);
     document.getElementById('target_result').textContent = target_num;
 
     // generate backup numbers and new bubble numbers
