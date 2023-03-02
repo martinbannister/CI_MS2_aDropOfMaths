@@ -162,37 +162,6 @@ There are no mock ups of the home page or high scores page as these were added a
 
 **User stories covered by this feature**
 
-[Footer on all pages](docs/user_story_images/footer_with_book_all_pages.png)
-
-3. 
-
-**User stories covered by this feature**
-
-[Footer on all pages](docs/user_story_images/footer_with_book_all_pages.png)
-
-4. 
-
-**User stories covered by this feature**
-
-[Hope Page Features](docs/user_story_images/home_page_features.png)
-
-5. 
-
-**User stories covered by this feature**
-
-
-6. 
-
-**User stories covered by this feature**
-
-
-7. 
-
-**User stories covered by this feature**
-
-[Contact page](docs/user_story_images/contact_page.png)
-
-
 ### Future Features
 Below is a list of features I would like to implement in the future.
 
