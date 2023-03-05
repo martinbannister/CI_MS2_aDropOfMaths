@@ -132,49 +132,49 @@ Rather than tabs the selection of the calculation type is done in the settings s
 There are no mock ups of the home page or high scores page as these were added after the design stage.
 
 ### Desktop
-[Intro 1](assets/docs/wireframes/01 wireframe_desktop_start_1.pdf)
+[Intro 1](assets/docs/wireframes/01_wireframe_desktop_start_1.pdf)
 
-[Intro 2](assets/docs/wireframes/02 wireframe_desktop_start_2.pdf)
+[Intro 2](assets/docs/wireframes/02_wireframe_desktop_start_2.pdf)
 
-[Intro 3](assets/docs/wireframes/03 wireframe_desktop_start_3.pdf)
+[Intro 3](assets/docs/wireframes/03_wireframe_desktop_start_3.pdf)
 
-[Settings](assets/docs/wireframes/04 wireframe_desktop_settings.pdf)
+[Settings](assets/docs/wireframes/04_wireframe_desktop_settings.pdf)
 
-[Addition](assets/docs/wireframes/05 wireframe_desktop_plus.pdf)
+[Addition](assets/docs/wireframes/05_wireframe_desktop_plus.pdf)
 
-[Subtraction](assets/docs/wireframes/06 wireframe_desktop_minus.pdf)
+[Subtraction](assets/docs/wireframes/06_wireframe_desktop_minus.pdf)
 
-[Multiplication](assets/docs/wireframes/07 wireframe_desktop_times.pdf)
+[Multiplication](assets/docs/wireframes/07_wireframe_desktop_times.pdf)
 
-[Division](assets/docs/wireframes/08 wireframe_desktop_divide.pdf)
+[Division](assets/docs/wireframes/08_wireframe_desktop_divide.pdf)
 
 
 
 ## Features
 ### Current Features
-1. 
+1. Customisable game settings are presented at the beginning of the game.  Users can choose the theme and various settings to alter difficulty and select the calculation type.
 
 **User stories covered by this feature**
+2, 7
+[]()
 
-[Navigation on all sizes](docs/user_story_images/nav_on_all_sizes.png)
-
-2. 
+2. Selectable colour scheme for Adult or Child.
 
 **User stories covered by this feature**
-
-[Footer on all pages](docs/user_story_images/footer_with_book_all_pages.png)
+5, 9
+[]()
 
 3. 
 
 **User stories covered by this feature**
 
-[Footer on all pages](docs/user_story_images/footer_with_book_all_pages.png)
+[]()
 
 4. 
 
 **User stories covered by this feature**
 
-[Hope Page Features](docs/user_story_images/home_page_features.png)
+[]()
 
 5. 
 
@@ -190,7 +190,7 @@ There are no mock ups of the home page or high scores page as these were added a
 
 **User stories covered by this feature**
 
-[Contact page](docs/user_story_images/contact_page.png)
+[]()
 
 
 ### Future Features
